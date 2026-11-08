@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Selman Er · Geomorphology &amp; Geoarchaeology</title>
+<meta name="description" content="Assoc. Prof. Dr. Selman Er, Department of Geography, İnönü University — geomorphology, geoarchaeology, morphotectonics, geoheritage, GIS and remote sensing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-lang="en">
+<header class="site"><div class="wrap">
+  <a class="brand" href="./">Selman Er</a>
+  <nav>
+    <a href="#research"><span class="en">Research</span><span class="tr">Araştırma</span></a>
+    <a href="#projects"><span class="en">Projects</span><span class="tr">Projeler</span></a>
+    <a href="#contact"><span class="en">Contact</span><span class="tr">İletişim</span></a>
+    <button class="lang" id="langBtn" type="button" aria-label="Switch language">TR</button>
+  </nav>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <p class="kicker"><span class="en">Department of Geography · İnönü University · Malatya</span><span class="tr">Coğrafya Bölümü · İnönü Üniversitesi · Malatya</span></p>
+  <h1>Assoc. Prof. Dr. Selman Er</h1>
+  <p class="sub">
+    <span class="en">Geomorphologist working where landforms, tectonics and the archaeological record meet — from the East Anatolian Fault Zone to drowned reservoir landscapes.</span>
+    <span class="tr">Yer şekilleri, tektonik ve arkeolojik kaydın kesiştiği alanda çalışan bir jeomorfolog — Doğu Anadolu Fay Zonu'ndan baraj altında kalmış peyzajlara.</span>
+  </p>
+  <div class="chips">
+    <span class="chip">Geomorphology</span><span class="chip">Geoarchaeology</span><span class="chip">Morphotectonics</span><span class="chip">Geoheritage</span><span class="chip">Archaeological Predictive Modelling</span><span class="chip">GIS &amp; Remote Sensing</span>
+  </div>
+</div></div>
+
+<main class="wrap">
+<section id="research">
+  <h2><span class="en">Research themes</span><span class="tr">Araştırma temaları</span></h2>
+  <div class="grid g3">
+    <div class="card"><h3><span class="en">Morphotectonics</span><span class="tr">Morfotektonik</span></h3><p><span class="en">Tectonic geomorphology of the East Anatolian Fault Zone; landscape response to active faulting.</span><span class="tr">Doğu Anadolu Fay Zonu'nun tektonik jeomorfolojisi; aktif faylanmaya peyzaj tepkisi.</span></p></div>
+    <div class="card"><h3><span class="en">Geoarchaeology &amp; APM</span><span class="tr">Jeoarkeoloji ve APM</span></h3><p><span class="en">Palaeogeographic context of settlement and archaeological predictive modelling.</span><span class="tr">Yerleşimin paleocoğrafik bağlamı ve arkeolojik tahmin modellemesi.</span></p></div>
+    <div class="card"><h3><span class="en">Geoheritage</span><span class="tr">Jeomiras</span></h3><p><span class="en">Inventory, assessment and geocultural interpretation of geoheritage and water heritage.</span><span class="tr">Jeomiras ve su mirasının envanteri, değerlendirilmesi ve jeokültürel yorumu.</span></p></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2><span class="en">Projects</span><span class="tr">Projeler</span></h2>
+  <div class="grid g2">
+    <a class="card" href="cop31/" style="text-decoration:none;color:inherit;border-left:4px solid var(--water)">
+      <p class="tag">COP31 · Antalya · 2026</p>
+      <h3><span class="en">Drawdown-zone heritage under a changing climate</span><span class="tr">Değişen iklimde salınım kuşağı mirası</span></h3>
+      <p><span class="en">Geoarchaeological impacts of lake and reservoir level changes on heritage in Türkiye, and a climate-resilient conservation model.</span><span class="tr">Göl ve baraj seviyesi değişimlerinin mirasa jeoarkeolojik etkileri ve iklime dirençli koruma modeli.</span></p>
+      <p style="color:var(--water);font-weight:600"><span class="en">Open project page →</span><span class="tr">Proje sayfası →</span></p>
+    </a>
+  </div>
+</section>
+
+<section id="contact">
+  <h2><span class="en">Contact</span><span class="tr">İletişim</span></h2>
+  <p><span class="en">Department of Geography, Faculty of Arts and Sciences, İnönü University, Malatya, Türkiye</span><span class="tr">İnönü Üniversitesi Fen-Edebiyat Fakültesi Coğrafya Bölümü, Malatya</span></p>
+  <a class="btn" href="mailto:erselman@gmail.com">erselman@gmail.com</a>
+  <!-- Add when available: ORCID / Google Scholar / AVESİS buttons -->
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Selman Er</div></footer>
+<script>
+(function(){
+  var b=document.body, btn=document.getElementById('langBtn');
+  function set(l){b.setAttribute('data-lang',l);document.documentElement.lang=l;btn.textContent=l==='en'?'TR':'EN';}
+  var q=new URLSearchParams(location.search).get('lang');
+  var nav=(navigator.language||'').toLowerCase().indexOf('tr')===0?'tr':'en';
+  set(q==='tr'||q==='en'?q:nav);
+  btn.addEventListener('click',function(){set(b.getAttribute('data-lang')==='en'?'tr':'en');});
+})();
+</script>
+</body>
+</html>
