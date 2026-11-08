@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>In the news: heritage exposed by falling lake and reservoir levels · Selman Er</title>
+<meta name="description" content="A curated, bilingual atlas of news reports on archaeological and historic sites exposed, damaged or re-submerged by water-level change in reservoirs and lakes — Türkiye and worldwide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="../../assets/style.css">
+<style>
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px;max-width:640px}
+.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:10px;padding:10px 12px}
+.stat b{display:block;font-size:1.7rem;line-height:1.1;font-family:"Source Serif 4",Georgia,serif}
+.stat span{font-size:.8rem;opacity:.9}
+#map{height:460px;border-radius:12px;border:1px solid var(--line);margin-top:8px;z-index:0}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:18px 0 6px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:#fff}
+.seg button{border:0;background:transparent;padding:7px 14px;font:inherit;font-size:.9rem;cursor:pointer;color:var(--ink)}
+.seg button.on{background:var(--water);color:#fff}
+.chipbtn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font:inherit;font-size:.85rem;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chipbtn.on{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+#q{flex:1;min-width:200px;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font:inherit;font-size:.95rem}
+.count{font-size:.9rem;color:var(--muted);margin:6px 0 14px}
+.list{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.item{background:#fff;border:1px solid var(--line);border-left:4px solid var(--c,#0f5c6e);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.item .meta{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;display:flex;gap:8px;flex-wrap:wrap}
+.item h3{font-size:1rem;margin:0;line-height:1.35}
+.item p{margin:0;font-size:.93rem}
+.item .src{margin-top:auto;font-size:.88rem;display:flex;justify-content:space-between;gap:8px;align-items:center;padding-top:6px}
+.item .src a{font-weight:600;text-decoration:none}
+.item .pill{font-size:.72rem;border-radius:999px;padding:2px 8px;background:#eef3f4;color:var(--ink)}
+.item.hl{outline:3px solid var(--silt)}
+.note{font-size:.85rem;color:var(--muted);max-width:80ch}
+.leaflet-popup-content{font-family:inherit;font-size:.9rem}
+@media (max-width:600px){.stats{grid-template-columns:repeat(2,1fr)} #map{height:340px}}
+</style>
+</head>
+<body data-lang="en">
+<header class="site"><div class="wrap">
+  <a class="brand" href="../../">Selman Er</a>
+  <nav>
+    <a href="../"><span class="en">COP31 project</span><span class="tr">COP31 projesi</span></a>
+    <a href="#atlas"><span class="en">Map</span><span class="tr">Harita</span></a>
+    <a href="#list"><span class="en">Reports</span><span class="tr">Haberler</span></a>
+    <button class="lang" id="langBtn" type="button" aria-label="Switch language">TR</button>
+  </nav>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <p class="kicker"><span class="en">In the news · Türkiye and worldwide</span><span class="tr">Basında · Türkiye ve dünya</span></p>
+  <h1><span class="en">When the water falls, heritage surfaces</span><span class="tr">Su çekildiğinde miras yüzeye çıkıyor</span></h1>
+  <p class="sub"><span class="en">A curated atlas of news reports on drowned villages, mounds, churches, caravanserais and ancient cities exposed — and often put at risk — by falling lake and reservoir levels.</span><span class="tr">Göl ve baraj seviyelerinin düşmesiyle açığa çıkan — ve çoğu zaman risk altına giren — batık köyler, höyükler, kiliseler, hanlar ve antik kentlere ilişkin haberlerden derlenmiş bir atlas.</span></p>
+  <div class="stats">
+    <div class="stat"><b id="sTotal">–</b><span class="en">reports</span><span class="tr">haber</span></div>
+    <div class="stat"><b id="sTr">–</b><span class="en">from Türkiye</span><span class="tr">Türkiye'den</span></div>
+    <div class="stat"><b id="sCountries">–</b><span class="en">countries</span><span class="tr">ülke</span></div>
+    <div class="stat"><b id="sYears">–</b><span class="en">years covered</span><span class="tr">yıl aralığı</span></div>
+  </div>
+</div></div>
+
+<main class="wrap">
+<section id="atlas">
+  <h2><span class="en">Atlas of reported sites</span><span class="tr">Haberlere konu olan alanlar</span></h2>
+  <div class="controls">
+    <div class="seg" id="regionSeg">
+      <button data-r="all" class="on"><span class="en">All</span><span class="tr">Tümü</span></button>
+      <button data-r="tr">Türkiye</button>
+      <button data-r="world"><span class="en">World</span><span class="tr">Dünya</span></button>
+    </div>
+    <span id="typeChips"></span>
+    <input id="q" type="search" placeholder="Search site, reservoir, country…" aria-label="Search">
+  </div>
+  <div id="map" role="region" aria-label="Map"></div>
+  <p class="note"><span class="en">Marker positions are approximate (site or reservoir level). Click a marker to jump to the report.</span><span class="tr">İşaret konumları yaklaşıktır (alan ya da baraj ölçeğinde). Habere gitmek için işarete tıklayın.</span></p>
+</section>
+
+<section id="list">
+  <h2><span class="en">Reports</span><span class="tr">Haberler</span></h2>
+  <p class="count" id="count"></p>
+  <div class="list" id="cards"></div>
+</section>
+
+<section id="method">
+  <h2><span class="en">About this collection</span><span class="tr">Bu derleme hakkında</span></h2>
+  <p class="note"><span class="en">Summaries are short paraphrases written for this atlas; please follow each link for the original report and its images. Inclusion reflects media coverage, not a systematic inventory: many exposures go unreported, and some reports concern seasonal or operational drawdowns rather than climate-driven droughts. Dates are those given by the source; where a date was not stated, only the site is shown.</span><span class="tr">Özetler bu atlas için kısaca yeniden yazılmıştır; özgün haber ve görseller için bağlantıları izleyiniz. Derleme medyada yer alan örnekleri yansıtır, sistematik bir envanter değildir: pek çok açığa çıkma haberleşmez ve bazı haberler iklim kaynaklı kuraklık yerine mevsimsel ya da işletme kaynaklı seviye düşüşlerine ilişkindir. Tarihler kaynakta belirtildiği şekildedir; tarih belirtilmemişse yalnızca alan gösterilmiştir.</span></p>
+  <p class="note"><span class="en">Know of a report that should be here?</span><span class="tr">Burada yer alması gereken bir haber mi biliyorsunuz?</span>
+    <a href="mailto:selman.er@inonu.edu.tr?subject=Drawdown%20heritage%20news">selman.er@inonu.edu.tr</a></p>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <span class="en">Assoc. Prof. Dr. Selman Er · Department of Geography, İnönü University, Malatya, Türkiye</span><span class="tr">Doç. Dr. Selman Er · İnönü Üniversitesi Coğrafya Bölümü, Malatya</span>
+  <p class="disclaimer">Map data © OpenStreetMap contributors.</p>
+</div></footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="news-data.js"></script>
+<script>
+(function(){
+  var N = (window.NEWS||[]).map(function(x,i){x.i=i;x.ct=x.ct||'Türkiye';x.ce=x.ce||'Türkiye';return x;});
+  var TYPES = {
+    exp:{c:'#0f5c6e',en:'Exposure',tr:'Açığa çıkma'},
+    risk:{c:'#b4432f',en:'Looting / damage',tr:'Yağma / tahribat'},
+    doc:{c:'#b9874a',en:'Rescue & documentation',tr:'Kurtarma ve belgeleme'},
+    sub:{c:'#5a6f9a',en:'Re-submergence',tr:'Yeniden su altında'},
+    ctx:{c:'#7a8a8f',en:'Context: lake retreat',tr:'Bağlam: göl çekilmesi'}
+  };
+  var st = {r:'all', types:{}, q:''};
+  Object.keys(TYPES).forEach(function(k){st.types[k]=true;});
+  var b=document.body, lang;
+
+  // stats
+  var yrs=N.filter(function(x){return x.y;}).map(function(x){return x.y;});
+  document.getElementById('sTotal').textContent=N.length;
+  document.getElementById('sTr').textContent=N.filter(function(x){return x.r==='tr';}).length;
+  document.getElementById('sCountries').textContent=new Set(N.map(function(x){return x.ce;})).size;
+  document.getElementById('sYears').textContent=Math.min.apply(null,yrs)+'–'+Math.max.apply(null,yrs);
+
+  // type chips
+  var tc=document.getElementById('typeChips');
+  Object.keys(TYPES).forEach(function(k){
+    var bt=document.createElement('button');bt.className='chipbtn on';bt.type='button';bt.dataset.t=k;
+    bt.innerHTML='<span class="dot" style="background:'+TYPES[k].c+'"></span><span class="en">'+TYPES[k].en+'</span><span class="tr">'+TYPES[k].tr+'</span>';
+    bt.onclick=function(){st.types[k]=!st.types[k];bt.classList.toggle('on',st.types[k]);render();};
+    tc.appendChild(bt);tc.appendChild(document.createTextNode(' '));
+  });
+  document.querySelectorAll('#regionSeg button').forEach(function(bt){
+    bt.onclick=function(){st.r=bt.dataset.r;document.querySelectorAll('#regionSeg button').forEach(function(z){z.classList.toggle('on',z===bt);});render(true);};
+  });
+  document.getElementById('q').addEventListener('input',function(e){st.q=e.target.value.toLowerCase().trim();render();});
+
+  // map
+  var map=null, layer=null;
+  if(window.L){
+    map=L.map('map',{scrollWheelZoom:false,worldCopyJump:true}).setView([39,20],3);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:12,attribution:'&copy; OpenStreetMap'}).addTo(map);
+    layer=L.layerGroup().addTo(map);
+  } else { document.getElementById('map').style.display='none'; }
+
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function fmtDate(x){
+    if(x.d){var p=x.d.split('-');return lang==='tr'?(p[2]+'.'+p[1]+'.'+p[0]):x.d;}
+    return x.y?String(x.y):'';
+  }
+  function pass(x){
+    if(st.r!=='all'&&x.r!==st.r) return false;
+    if(!st.types[x.t]) return false;
+    if(st.q){var h=(x.place+' '+x.res+' '+x.ct+' '+x.ce+' '+x.tt+' '+x.te+' '+x.o).toLowerCase(); if(h.indexOf(st.q)<0) return false;}
+    return true;
+  }
+  function render(fit){
+    lang=b.getAttribute('data-lang');
+    var rows=N.filter(pass).sort(function(a,c){return (c.d||String(c.y||0)).localeCompare(a.d||String(a.y||0));});
+    var pts=[];
+    if(layer){ layer.clearLayers();
+    rows.forEach(function(x){
+      var m=L.circleMarker([x.lat,x.lon],{radius:7,color:'#fff',weight:1.5,fillColor:TYPES[x.t].c,fillOpacity:.9});
+      m.bindPopup('<b>'+esc(x.place)+'</b><br>'+esc(x.res)+' · '+esc(lang==='tr'?x.ct:x.ce)+'<br>'+esc(lang==='tr'?x.tt:x.te)+'<br><a href="#n'+x.i+'">'+(lang==='tr'?'Habere git ↓':'Go to report ↓')+'</a>');
+      m.on('popupopen',function(){var el=document.getElementById('n'+x.i);document.querySelectorAll('.item.hl').forEach(function(z){z.classList.remove('hl');});if(el)el.classList.add('hl');});
+      m.addTo(layer);pts.push([x.lat,x.lon]);
+    });
+    if(fit&&pts.length){map.fitBounds(pts,{padding:[30,30],maxZoom:6});}
+    }
+    var cards=document.getElementById('cards');
+    cards.innerHTML=rows.map(function(x){
+      var T=TYPES[x.t];
+      return '<article class="item" id="n'+x.i+'" style="--c:'+T.c+'">'+
+        '<div class="meta"><span>'+esc(fmtDate(x))+'</span><span>'+esc(lang==='tr'?x.ct:x.ce)+'</span><span>'+esc(x.res)+'</span></div>'+
+        '<h3>'+esc(lang==='tr'?x.tt:x.te)+'</h3>'+
+        '<p>'+esc(lang==='tr'?x.st:x.se)+'</p>'+
+        '<div class="src"><span class="pill">'+esc(lang==='tr'?T.tr:T.en)+'</span><a href="'+esc(x.u)+'" target="_blank" rel="noopener">'+esc(x.o)+' ↗</a></div>'+
+      '</article>';
+    }).join('');
+    document.getElementById('count').textContent= lang==='tr' ? (rows.length+' haber gösteriliyor') : ('Showing '+rows.length+' reports');
+    document.getElementById('q').placeholder = lang==='tr' ? 'Alan, baraj, ülke ara…' : 'Search site, reservoir, country…';
+  }
+
+  var btn=document.getElementById('langBtn');
+  function set(l){b.setAttribute('data-lang',l);document.documentElement.lang=l;btn.textContent=l==='en'?'TR':'EN';render();}
+  var qp=new URLSearchParams(location.search).get('lang');
+  var nav=(navigator.language||'').toLowerCase().indexOf('tr')===0?'tr':'en';
+  set(qp==='tr'||qp==='en'?qp:nav);
+  btn.addEventListener('click',function(){set(b.getAttribute('data-lang')==='en'?'tr':'en');});
+  setTimeout(function(){if(map)map.invalidateSize();render(true);},50);
+})();
+</script>
+</body>
+</html>
