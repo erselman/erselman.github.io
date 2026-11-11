@@ -3,80 +3,385 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Selman Er · Geomorphology &amp; Geoarchaeology</title>
-<meta name="description" content="Assoc. Prof. Dr. Selman Er, Department of Geography, İnönü University — geomorphology, geoarchaeology, morphotectonics, geoheritage, GIS and remote sensing.">
+<title>Selman Er · Geomorphology, Geoarchaeology & Heritage Risk</title>
+<meta name="description" content="Assoc. Prof. Dr. Selman Er, İnönü University — geomorphology, geoarchaeology, geoheritage, GIS and remote sensing. Heritage risk in lakes and reservoirs under a changing climate.">
+<meta property="og:title" content="Selman Er · Geomorphology & Geoarchaeology">
+<meta property="og:image" content="https://erselman.github.io/assets/selman-er.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<style>
+:root{--deep:#07222b;--teal:#0f5c6e;--aqua:#3fb6c6;--sand:#d7a65f}
+body{background:#f4f7f6}
+/* header over hero */
+header.site{position:fixed;top:0;left:0;right:0;z-index:20;background:transparent;border:0;transition:background .3s,box-shadow .3s}
+header.site.solid{background:rgba(7,34,43,.92);backdrop-filter:blur(8px);box-shadow:0 2px 20px rgba(0,0,0,.2)}
+header.site .brand,header.site nav a{color:#e9f4f6}
+header.site nav a:hover{color:var(--aqua)}
+header.site .lang{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+/* HERO */
+.hero2{position:relative;min-height:100vh;min-height:100svh;background:var(--deep);color:#fff;overflow:hidden;display:flex;align-items:center}
+#scene{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero2::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,34,43,.88) 0%,rgba(7,34,43,.55) 38%,rgba(7,34,43,0) 62%);pointer-events:none}
+.hero2 .wrap{position:relative;z-index:2;width:100%;padding-top:90px;padding-bottom:90px}
+.intro{max-width:560px}
+.portrait{position:relative;width:148px;height:148px;margin-bottom:22px}
+.portrait::before{content:"";position:absolute;inset:-6px;border-radius:50%;background:conic-gradient(from 0deg,var(--aqua),var(--sand),var(--aqua),transparent 70%,var(--aqua));animation:spin 6s linear infinite}
+.portrait::after{content:"";position:absolute;inset:-2px;border-radius:50%;background:var(--deep)}
+.portrait img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:50% 22%;border-radius:50%;border:3px solid rgba(255,255,255,.9)}
+.portrait .pulse{position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--aqua);animation:pulse 3s ease-out infinite;z-index:0}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.35);opacity:0}}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;color:var(--aqua);font-weight:700;margin:0 0 10px}
+.hero2 h1{font-family:"Source Serif 4",Georgia,serif;font-weight:700;font-size:clamp(2.2rem,5.4vw,3.6rem);line-height:1.05;margin:0 0 12px}
+.rot{display:block;font-size:clamp(1.15rem,2.4vw,1.55rem);font-weight:600;color:#cfe9ee;min-height:1.6em;margin-bottom:18px}
+.rot b{color:var(--sand);font-weight:700;border-right:2px solid var(--sand);padding-right:3px;animation:caret 1s steps(1) infinite}
+@keyframes caret{50%{border-color:transparent}}
+.hero2 .lede{font-size:1.06rem;color:#d6e8ec;max-width:52ch;margin:0 0 24px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn2{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s}
+.btn2.primary{background:var(--sand);color:#1d1407;box-shadow:0 6px 24px rgba(215,166,95,.35)}
+.btn2.ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff}
+.btn2:hover{transform:translateY(-2px)}
+.btn2.ghost:hover{background:rgba(255,255,255,.1);color:#fff}
+.btn2.primary:hover{color:#1d1407;box-shadow:0 10px 30px rgba(215,166,95,.5)}
+/* gauge */
+.gauge{position:absolute;z-index:3;right:22px;top:84px;background:rgba(7,34,43,.72);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:12px 16px;min-width:210px;font-size:.85rem}
+.gauge .lbl{opacity:.8;text-transform:uppercase;letter-spacing:.1em;font-size:.7rem}
+.gauge .val{font-family:"Source Serif 4",Georgia,serif;font-size:1.9rem;line-height:1.1;font-weight:700}
+.gauge .bar{height:6px;background:rgba(255,255,255,.15);border-radius:4px;overflow:hidden;margin:6px 0}
+.gauge .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--aqua),#7fd8e3);width:50%}
+.gauge .state{font-weight:700}
+.gauge .state.warn{color:var(--sand)}
+.scrollhint{position:absolute;z-index:3;left:50%;bottom:18px;transform:translateX(-50%);color:#cfe9ee;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;opacity:.8;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translate(-50%,6px)}}
+/* ticker */
+.ticker{background:var(--teal);color:#fff;overflow:hidden;white-space:nowrap;border-top:1px solid rgba(255,255,255,.15)}
+.ticker .row{display:inline-flex;gap:46px;padding:12px 0;animation:tick 140s linear infinite}
+.ticker:hover .row{animation-play-state:paused}
+.ticker a{color:#fff;text-decoration:none;font-size:.92rem}
+.ticker a b{color:var(--sand);margin-right:8px;font-weight:700}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* stats */
+.stats2{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px;position:relative;z-index:4}
+.stat2{background:#fff;border-radius:16px;padding:22px 20px;box-shadow:0 10px 30px rgba(7,34,43,.1);border:1px solid #e3ecee}
+.stat2 b{display:block;font-family:"Source Serif 4",Georgia,serif;font-size:2.5rem;line-height:1;color:var(--teal)}
+.stat2 span{font-size:.9rem;color:var(--muted)}
+/* sections */
+.sec{padding:80px 0}
+.sec h2{font-size:clamp(1.6rem,3.2vw,2.3rem);margin-bottom:8px}
+.sec .kick{color:var(--teal);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;margin:0 0 6px}
+.sec .sub2{color:var(--muted);max-width:62ch;margin:0 0 32px;font-size:1.05rem}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.xcard{position:relative;background:#fff;border:1px solid #e3ecee;border-radius:18px;padding:24px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.xcard:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(7,34,43,.12)}
+.xcard::after{content:"";position:absolute;left:0;right:0;bottom:0;height:0;background:linear-gradient(180deg,rgba(63,182,198,0),rgba(63,182,198,.12));transition:height .5s}
+.xcard:hover::after{height:100%}
+.xcard .ic{width:52px;height:52px;border-radius:14px;background:#e6f4f6;display:grid;place-items:center;margin-bottom:14px}
+.xcard .ic svg{width:28px;height:28px;stroke:var(--teal);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.xcard h3{font-size:1.12rem;margin:0 0 6px}
+.xcard p{margin:0;color:#3d4c55;font-size:.96rem}
+/* projects */
+.proj{display:grid;grid-template-columns:1.2fr 1fr;gap:18px}
+.pcard{position:relative;border-radius:20px;overflow:hidden;min-height:300px;color:#fff;text-decoration:none;display:flex;flex-direction:column;justify-content:flex-end;padding:26px;transition:transform .3s}
+.pcard:hover{transform:scale(1.015);color:#fff}
+.pcard.a{background:linear-gradient(160deg,#0b3a47,#0f5c6e 60%,#2a8a9b)}
+.pcard.b{background:linear-gradient(160deg,#3a2a12,#8a5f2a 60%,#d7a65f)}
+.pcard .waves{position:absolute;left:-10%;right:-10%;bottom:0;height:120px;opacity:.35}
+.pcard .waves path{animation:drift 9s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translateX(-60px)}}
+.pcard .tag2{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85;position:relative}
+.pcard h3{font-family:"Source Serif 4",Georgia,serif;font-size:1.6rem;margin:6px 0;position:relative}
+.pcard p{position:relative;margin:0 0 10px;opacity:.92}
+.pcard .go{position:relative;font-weight:700}
+/* collab band */
+.band{background:linear-gradient(120deg,var(--deep),#0f5c6e);color:#fff;border-radius:24px;padding:44px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center;position:relative;overflow:hidden}
+.band h2{color:#fff}
+.band ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.band li{display:flex;gap:10px;align-items:flex-start;color:#d6e8ec}
+.band li::before{content:"";flex:0 0 10px;height:10px;border-radius:50%;background:var(--sand);margin-top:8px}
+.band .bubble{position:absolute;border-radius:50%;background:rgba(127,216,227,.12);animation:rise 12s linear infinite}
+@keyframes rise{from{transform:translateY(120%)}to{transform:translateY(-140%)}}
+.aff{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.aff > span{background:#fff;border:1px solid #e3ecee;border-radius:999px;padding:8px 16px;font-size:.9rem;color:#3d4c55}
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+footer a{color:#e6eef0}
+@media (max-width:900px){
+  .cards3{grid-template-columns:1fr 1fr}.proj,.band{grid-template-columns:1fr}
+  .stats2{grid-template-columns:1fr 1fr}
+  .hero2::after{background:linear-gradient(180deg,rgba(7,34,43,.85) 0%,rgba(7,34,43,.55) 55%,rgba(7,34,43,.2) 100%)}
+}
+@media (max-width:600px){
+  .cards3{grid-template-columns:1fr}.gauge{left:16px;right:16px;top:auto;bottom:16px;min-width:0}.scrollhint{display:none}
+  header.site nav a.hide-s{display:none}.band{padding:28px}.portrait{width:120px;height:120px}
+  .hero2 .wrap{padding-bottom:150px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
 </head>
 <body data-lang="en">
-<header class="site"><div class="wrap">
+<header class="site" id="hdr"><div class="wrap">
   <a class="brand" href="./">Selman Er</a>
   <nav>
-    <a href="#research"><span class="en">Research</span><span class="tr">Araştırma</span></a>
+    <a class="hide-s" href="#expertise"><span class="en">Expertise</span><span class="tr">Uzmanlık</span></a>
     <a href="#projects"><span class="en">Projects</span><span class="tr">Projeler</span></a>
-    <a href="#contact"><span class="en">Contact</span><span class="tr">İletişim</span></a>
+    <a class="hide-s" href="#collaborate"><span class="en">Collaborate</span><span class="tr">İş birliği</span></a>
     <button class="lang" id="langBtn" type="button" aria-label="Switch language">TR</button>
   </nav>
 </div></header>
 
-<div class="hero"><div class="wrap">
-  <p class="kicker"><span class="en">Department of Geography · İnönü University · Malatya</span><span class="tr">Coğrafya Bölümü · İnönü Üniversitesi · Malatya</span></p>
-  <h1>Assoc. Prof. Dr. Selman Er</h1>
-  <p class="sub">
-    <span class="en">Geomorphologist working where landforms, tectonics and the archaeological record meet — from the East Anatolian Fault Zone to drowned reservoir landscapes.</span>
-    <span class="tr">Yer şekilleri, tektonik ve arkeolojik kaydın kesiştiği alanda çalışan bir jeomorfolog — Doğu Anadolu Fay Zonu'ndan baraj altında kalmış peyzajlara.</span>
-  </p>
-  <div class="chips">
-    <span class="chip">Geomorphology</span><span class="chip">Geoarchaeology</span><span class="chip">Morphotectonics</span><span class="chip">Geoheritage</span><span class="chip">Archaeological Predictive Modelling</span><span class="chip">GIS &amp; Remote Sensing</span>
+<section class="hero2" id="top">
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="intro">
+      <div class="portrait"><span class="pulse"></span><img src="assets/selman-er.jpg" alt="Assoc. Prof. Dr. Selman Er"></div>
+      <p class="eyebrow"><span class="en">Geomorphology · Geoarchaeology · GIS</span><span class="tr">Jeomorfoloji · Jeoarkeoloji · CBS</span></p>
+      <h1>Selman Er</h1>
+      <span class="rot"><span class="en">Assoc. Prof. Dr. — </span><span class="tr">Doç. Dr. — </span><b id="rotWord">&nbsp;</b></span>
+      <p class="lede"><span class="en">When lakes and reservoirs fall, buried history surfaces — and becomes vulnerable. I map, model and monitor the landscapes where water, tectonics and cultural heritage meet.</span><span class="tr">Göller ve barajlar çekildiğinde gömülü tarih yüzeye çıkar — ve savunmasız kalır. Su, tektonik ve kültürel mirasın buluştuğu peyzajları haritalıyor, modelliyor ve izliyorum.</span></p>
+      <div class="cta">
+        <a class="btn2 primary" href="cop31/"><span class="en">COP31 project</span><span class="tr">COP31 projesi</span> →</a>
+        <a class="btn2 ghost" href="cop31/news/"><span class="en">News atlas</span><span class="tr">Haber atlası</span></a>
+        <a class="btn2 ghost" href="#collaborate"><span class="en">Work with me</span><span class="tr">Birlikte çalışalım</span></a>
+      </div>
+    </div>
   </div>
-</div></div>
+  <div class="gauge" aria-live="off">
+    <div class="lbl"><span class="en">Simulated reservoir level</span><span class="tr">Temsili baraj doluluğu</span></div>
+    <div class="val" id="gVal">—</div>
+    <div class="bar"><i id="gBar"></i></div>
+    <div class="state" id="gState">—</div>
+  </div>
+  <div class="scrollhint">▾ <span class="en">scroll</span><span class="tr">kaydır</span></div>
+</section>
+
+<div class="ticker" aria-label="Latest reports"><div class="row" id="tickRow"></div></div>
 
 <main class="wrap">
-<section id="research">
-  <h2><span class="en">Research themes</span><span class="tr">Araştırma temaları</span></h2>
-  <div class="grid g3">
-    <div class="card"><h3><span class="en">Morphotectonics</span><span class="tr">Morfotektonik</span></h3><p><span class="en">Tectonic geomorphology of the East Anatolian Fault Zone; landscape response to active faulting.</span><span class="tr">Doğu Anadolu Fay Zonu'nun tektonik jeomorfolojisi; aktif faylanmaya peyzaj tepkisi.</span></p></div>
-    <div class="card"><h3><span class="en">Geoarchaeology &amp; APM</span><span class="tr">Jeoarkeoloji ve APM</span></h3><p><span class="en">Palaeogeographic context of settlement and archaeological predictive modelling.</span><span class="tr">Yerleşimin paleocoğrafik bağlamı ve arkeolojik tahmin modellemesi.</span></p></div>
-    <div class="card"><h3><span class="en">Geoheritage</span><span class="tr">Jeomiras</span></h3><p><span class="en">Inventory, assessment and geocultural interpretation of geoheritage and water heritage.</span><span class="tr">Jeomiras ve su mirasının envanteri, değerlendirilmesi ve jeokültürel yorumu.</span></p></div>
+  <div class="stats2">
+    <div class="stat2 rv"><b data-count="67">0</b><span class="en">news reports in the heritage atlas</span><span class="tr">haber, miras atlasında</span></div>
+    <div class="stat2 rv"><b data-count="14">0</b><span class="en">countries covered</span><span class="tr">ülke</span></div>
+    <div class="stat2 rv"><b data-count="4">0</b><span class="en">pilot lake & reservoir landscapes</span><span class="tr">pilot göl ve baraj alanı</span></div>
+    <div class="stat2 rv"><b data-count="7">0</b><span class="en">drawdown-zone processes modelled</span><span class="tr">salınım kuşağı süreci</span></div>
   </div>
-</section>
 
-<section id="projects">
-  <h2><span class="en">Projects</span><span class="tr">Projeler</span></h2>
-  <div class="grid g2">
-    <a class="card" href="cop31/" style="text-decoration:none;color:inherit;border-left:4px solid var(--water)">
-      <p class="tag">COP31 · Antalya · 2026</p>
-      <h3><span class="en">Drawdown-zone heritage under a changing climate</span><span class="tr">Değişen iklimde salınım kuşağı mirası</span></h3>
-      <p><span class="en">Geoarchaeological impacts of lake and reservoir level changes on heritage in Türkiye, and a climate-resilient conservation model.</span><span class="tr">Göl ve baraj seviyesi değişimlerinin mirasa jeoarkeolojik etkileri ve iklime dirençli koruma modeli.</span></p>
-      <p style="color:var(--water);font-weight:600"><span class="en">Open project page →</span><span class="tr">Proje sayfası →</span></p>
-    </a>
-    <a class="card" href="cop31/news/" style="text-decoration:none;color:inherit;border-left:4px solid var(--silt)">
-      <p class="tag"><span class="en">News atlas</span><span class="tr">Haber atlası</span></p>
-      <h3><span class="en">When the water falls, heritage surfaces</span><span class="tr">Su çekildiğinde miras yüzeye çıkıyor</span></h3>
-      <p><span class="en">67 reports from Türkiye and worldwide on heritage exposed by falling lake and reservoir levels, on an interactive map.</span><span class="tr">Göl ve baraj seviyesi düşüşüyle açığa çıkan mirasa ilişkin Türkiye ve dünyadan 67 haber, etkileşimli haritada.</span></p>
-      <p style="color:var(--water);font-weight:600"><span class="en">Open the atlas →</span><span class="tr">Atlası aç →</span></p>
-    </a>
-  </div>
-</section>
+  <section class="sec" id="expertise">
+    <p class="kick rv"><span class="en">Expertise</span><span class="tr">Uzmanlık</span></p>
+    <h2 class="rv"><span class="en">Reading landscapes, protecting heritage</span><span class="tr">Peyzajı okumak, mirası korumak</span></h2>
+    <p class="sub2 rv"><span class="en">Field-based earth science combined with spatial analytics — from fault scarps to drowned mounds.</span><span class="tr">Arazi temelli yer bilimi ve mekânsal analitik — fay sarplıklarından batık höyüklere.</span></p>
+    <div class="cards3">
+      <div class="xcard rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M2 20l6-9 4 5 3-4 7 8z"/><path d="M14 4l-2 6 4 1-2 6"/></svg></div>
+        <h3><span class="en">Geomorphology & morphotectonics</span><span class="tr">Jeomorfoloji ve morfotektonik</span></h3>
+        <p><span class="en">Active-fault landscapes of the East Anatolian Fault Zone and their geomorphic signatures.</span><span class="tr">Doğu Anadolu Fay Zonu'nda aktif fay peyzajları ve jeomorfolojik izleri.</span></p></div>
+      <div class="xcard rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 19h18"/><path d="M5 19c1-5 4-8 7-8s6 3 7 8"/><path d="M9 15h6M8 17h8"/></svg></div>
+        <h3><span class="en">Geoarchaeology & predictive modelling</span><span class="tr">Jeoarkeoloji ve tahmin modellemesi</span></h3>
+        <p><span class="en">Palaeogeography of settlement and archaeological predictive models for survey planning.</span><span class="tr">Yerleşimin paleocoğrafyası ve yüzey araştırması planlaması için tahmin modelleri.</span></p></div>
+      <div class="xcard rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 15c3-2 6 2 9 0s6-2 9 0"/><path d="M3 19c3-2 6 2 9 0s6-2 9 0"/><path d="M8 11V5h8v6"/><path d="M12 5V3"/></svg></div>
+        <h3><span class="en">Water heritage & climate risk</span><span class="tr">Su mirası ve iklim riski</span></h3>
+        <p><span class="en">Exposure and vulnerability of lake- and reservoir-shore heritage under drought.</span><span class="tr">Kuraklık altında göl ve baraj kıyısı mirasının maruziyeti ve hassasiyeti.</span></p></div>
+      <div class="xcard rv"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
+        <h3><span class="en">GIS, remote sensing & GeoAI</span><span class="tr">CBS, uzaktan algılama ve GeoAI</span></h3>
+        <p><span class="en">Satellite time series, UAV photogrammetry and machine-learning workflows.</span><span class="tr">Uydu zaman serileri, İHA fotogrametrisi ve makine öğrenmesi iş akışları.</span></p></div>
+      <div class="xcard rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17v.5"/></svg></div>
+        <h3><span class="en">Natural hazards & mass movements</span><span class="tr">Doğal tehlikeler ve kütle hareketleri</span></h3>
+        <p><span class="en">Landslide and slope-failure assessment for disaster-risk planning.</span><span class="tr">Afet risk planlaması için heyelan ve şev duraysızlığı değerlendirmesi.</span></p></div>
+      <div class="xcard rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5-7-11a7 7 0 0114 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3><span class="en">Geoheritage & geotourism</span><span class="tr">Jeomiras ve jeoturizm</span></h3>
+        <p><span class="en">Inventory, assessment and geocultural interpretation of geosites.</span><span class="tr">Jeositlerin envanteri, değerlendirmesi ve jeokültürel yorumu.</span></p></div>
+    </div>
+  </section>
 
-<section id="contact">
-  <h2><span class="en">Contact</span><span class="tr">İletişim</span></h2>
-  <p><span class="en">Department of Geography, Faculty of Arts and Sciences, İnönü University, Malatya, Türkiye</span><span class="tr">İnönü Üniversitesi Fen-Edebiyat Fakültesi Coğrafya Bölümü, Malatya</span></p>
-  <a class="btn" href="mailto:selman.er@inonu.edu.tr">selman.er@inonu.edu.tr</a>
-  <!-- Add when available: ORCID / Google Scholar / AVESİS buttons -->
-</section>
+  <section class="sec" id="projects" style="padding-top:20px">
+    <p class="kick rv"><span class="en">Projects</span><span class="tr">Projeler</span></p>
+    <h2 class="rv"><span class="en">Featured work</span><span class="tr">Öne çıkan çalışmalar</span></h2>
+    <p class="sub2 rv"><span class="en">Presented at the COP31 Green Zone, Antalya, 13 November 2026.</span><span class="tr">COP31 Yeşil Bölge'de sunuldu, Antalya, 13 Kasım 2026.</span></p>
+    <div class="proj">
+      <a class="pcard a rv" href="cop31/">
+        <svg class="waves" viewBox="0 0 600 120" preserveAspectRatio="none"><path d="M0 60 Q75 30 150 60 T300 60 T450 60 T600 60 T750 60 V120 H0Z" fill="#7fd8e3"/><path d="M0 80 Q75 55 150 80 T300 80 T450 80 T600 80 T750 80 V120 H0Z" fill="#3fb6c6" style="animation-duration:12s"/></svg>
+        <span class="tag2">COP31 · Antalya</span>
+        <h3><span class="en">Drawdown-zone heritage under a changing climate</span><span class="tr">Değişen iklimde salınım kuşağı mirası</span></h3>
+        <p><span class="en">Monitoring and a climate-resilient conservation model for Karakaya, Keban, Lake İznik and the Lakes District.</span><span class="tr">Karakaya, Keban, İznik Gölü ve Göller Bölgesi için izleme ve iklime dirençli koruma modeli.</span></p>
+        <span class="go"><span class="en">Explore the project →</span><span class="tr">Projeyi incele →</span></span>
+      </a>
+      <a class="pcard b rv" href="cop31/news/">
+        <svg class="waves" viewBox="0 0 600 120" preserveAspectRatio="none"><path d="M0 70 Q75 40 150 70 T300 70 T450 70 T600 70 T750 70 V120 H0Z" fill="#f3d9ae"/></svg>
+        <span class="tag2"><span class="en">Interactive atlas</span><span class="tr">Etkileşimli atlas</span></span>
+        <h3><span class="en">When the water falls, heritage surfaces</span><span class="tr">Su çekildiğinde miras yüzeye çıkıyor</span></h3>
+        <p><span class="en">67 reports from 14 countries on a live map.</span><span class="tr">14 ülkeden 67 haber, canlı haritada.</span></p>
+        <span class="go"><span class="en">Open the atlas →</span><span class="tr">Atlası aç →</span></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="sec" id="collaborate" style="padding-top:10px">
+    <div class="band rv">
+      <span class="bubble" style="width:120px;height:120px;right:8%;bottom:0;animation-delay:-2s"></span>
+      <span class="bubble" style="width:60px;height:60px;right:30%;bottom:0;animation-delay:-7s"></span>
+      <span class="bubble" style="width:90px;height:90px;right:18%;bottom:0;animation-delay:-4s;animation-duration:16s"></span>
+      <div>
+        <p class="kick" style="color:var(--sand)"><span class="en">Collaborate</span><span class="tr">İş birliği</span></p>
+        <h2><span class="en">Let's turn data into decisions</span><span class="tr">Veriyi karara dönüştürelim</span></h2>
+        <p style="color:#d6e8ec;max-width:52ch"><span class="en">I work with water agencies, heritage authorities, municipalities, universities and research consortia on applied projects, expert reports and training.</span><span class="tr">Su idareleri, miras kurumları, belediyeler, üniversiteler ve araştırma konsorsiyumlarıyla uygulamalı projeler, uzman raporları ve eğitimler yürütüyorum.</span></p>
+        <div class="cta" style="margin-top:18px"><a class="btn2 primary" href="mailto:selman.er@inonu.edu.tr?subject=Collaboration">selman.er@inonu.edu.tr</a></div>
+      </div>
+      <ul>
+        <li><span class="en">Heritage risk mapping for lakes and reservoirs</span><span class="tr">Göl ve barajlar için miras risk haritalaması</span></li>
+        <li><span class="en">Geoheritage inventories and geotourism planning</span><span class="tr">Jeomiras envanteri ve jeoturizm planlaması</span></li>
+        <li><span class="en">Archaeological predictive modelling for survey design</span><span class="tr">Yüzey araştırması tasarımı için arkeolojik tahmin modelleri</span></li>
+        <li><span class="en">GIS and remote-sensing analyses, UAV photogrammetry</span><span class="tr">CBS ve uzaktan algılama analizleri, İHA fotogrametrisi</span></li>
+        <li><span class="en">Workshops and training in geospatial methods</span><span class="tr">Mekânsal yöntemlerde çalıştay ve eğitimler</span></li>
+      </ul>
+    </div>
+    <div class="aff rv">
+      <span><span class="en">Department of Geography, İnönü University</span><span class="tr">İnönü Üniversitesi Coğrafya Bölümü</span></span>
+      <span><span class="en">Member, COST Action CA23141 (MAIA)</span><span class="tr">Üye, COST Action CA23141 (MAIA)</span></span>
+      <span>Malatya, Türkiye</span>
+    </div>
+  </section>
 </main>
 
-<footer><div class="wrap">© 2026 Selman Er</div></footer>
+<footer><div class="wrap">© 2026 Selman Er · <a href="mailto:selman.er@inonu.edu.tr">selman.er@inonu.edu.tr</a>
+  <p class="disclaimer"><span class="en">The animated reservoir in the header is an illustrative simulation, not live data.</span><span class="tr">Girişteki hareketli baraj kesiti temsili bir canlandırmadır, gerçek zamanlı veri değildir.</span></p>
+</div></footer>
+
+<script src="cop31/news/news-data.js"></script>
 <script>
 (function(){
-  var b=document.body, btn=document.getElementById('langBtn');
-  function set(l){b.setAttribute('data-lang',l);document.documentElement.lang=l;btn.textContent=l==='en'?'TR':'EN';}
-  var q=new URLSearchParams(location.search).get('lang');
-  var nav=(navigator.language||'').toLowerCase().indexOf('tr')===0?'tr':'en';
-  set(q==='tr'||q==='en'?q:nav);
-  btn.addEventListener('click',function(){set(b.getAttribute('data-lang')==='en'?'tr':'en');});
+var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+var b=document.body, lang='en';
+
+/* ---------- language ---------- */
+var btn=document.getElementById('langBtn');
+function setLang(l){lang=l;b.setAttribute('data-lang',l);document.documentElement.lang=l;btn.textContent=l==='en'?'TR':'EN';buildTicker();}
+btn.addEventListener('click',function(){setLang(lang==='en'?'tr':'en');});
+
+/* ---------- header ---------- */
+var hdr=document.getElementById('hdr');
+addEventListener('scroll',function(){hdr.classList.toggle('solid',scrollY>40);},{passive:true});
+
+/* ---------- rotating words ---------- */
+var WORDS={en:['geomorphologist','geoarchaeologist','heritage-risk analyst','GIS & remote-sensing specialist'],
+           tr:['jeomorfolog','jeoarkeolog','miras riski analisti','CBS ve uzaktan algılama uzmanı']};
+var wi=0,ci=0,del=false,rw=document.getElementById('rotWord');
+function typeLoop(){
+  var w=WORDS[lang][wi%WORDS[lang].length];
+  if(reduce){rw.textContent=w;return;}
+  ci+=del?-1:1; rw.textContent=w.slice(0,ci)||' ';
+  var t=del?40:85;
+  if(!del&&ci>=w.length){del=true;t=1700;} else if(del&&ci<=0){del=false;wi++;t=300;}
+  setTimeout(typeLoop,t);
+}
+
+/* ---------- ticker ---------- */
+function buildTicker(){
+  var N=(window.NEWS||[]).slice().sort(function(a,c){return (c.d||String(c.y||0)).localeCompare(a.d||String(a.y||0));}).slice(0,24);
+  var html=N.map(function(x){var yr=x.y?x.y:'';return '<a href="cop31/news/#n'+(window.NEWS.indexOf(x))+'"><b>'+yr+'</b>'+(lang==='tr'?x.tt:x.te)+'</a>';}).join('');
+  document.getElementById('tickRow').innerHTML=html+html;
+}
+
+/* ---------- reveal & counters ---------- */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');
+  var c=e.target.querySelector('[data-count]'); if(c&&!c.done){c.done=1;var n=+c.dataset.count,s=performance.now();(function f(t){var k=Math.min(1,(t-s)/1400);c.textContent=Math.round(n*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f);})(s);}
+  io.unobserve(e.target);}});},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+
+/* ---------- reservoir scene ---------- */
+var cv=document.getElementById('scene'),cx=cv.getContext('2d'),W,H,dpr;
+function size(){dpr=Math.min(2,devicePixelRatio||1);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);}
+size();addEventListener('resize',size);
+var mobile=function(){return W<900;};
+function vx(){return mobile()?0.5:0.73;}           // valley centre (fraction of width)
+function vw(f){return mobile()?0.62:(f<0?0.30:0.24);}           // half-width
+function rimY(){return H*0.50;}
+function bedY(){return H*0.94;}
+function ground(x){var u=x/W-vx();var d=1-Math.pow(u/vw(u),2);if(d<0)d=0;return rimY()+(bedY()-rimY())*Math.pow(d,0.75)+Math.sin(x*0.03)*2;}
+var TOP=function(){return H*0.57;}, LOW=function(){return H*0.86;};
+var SITES=[
+  {f:-0.62,kind:'church',en:'Drowned church',tr:'Batık kilise'},
+  {f:0.62,kind:'columns',en:'Roman columns',tr:'Roma sütunları'},
+  {f:0.81,kind:'mound',en:'Mound (tell)',tr:'Höyük'},
+  {f:0.87,kind:'minaret',en:'Village minaret',tr:'Köy minaresi'}
+];
+var ruinsSeen={};
+function drawMountains(t){
+  var layers=[{y:.30,a:60,c:'#0d3340',s:.0018,o:0},{y:.38,a:45,c:'#0f3f4d',s:.0026,o:2},{y:.45,a:30,c:'#124a58',s:.004,o:4}];
+  layers.forEach(function(L){cx.fillStyle=L.c;cx.beginPath();cx.moveTo(0,H);
+    for(var x=0;x<=W;x+=8){var y=H*L.y-L.a*(Math.sin(x*L.s+L.o)+.5*Math.sin(x*L.s*2.3+L.o*1.7))-0.6*Math.sin(t*.00005+x*.001)*6;cx.lineTo(x,y);}
+    cx.lineTo(W,H);cx.closePath();cx.fill();});
+}
+function groundPath(){cx.beginPath();cx.moveTo(0,H);for(var x=0;x<=W;x+=4)cx.lineTo(x,ground(x));cx.lineTo(W,H);cx.closePath();}
+function drawSite(s,x,y,alpha){
+  cx.save();cx.globalAlpha=alpha;cx.fillStyle='#c9a46a';cx.strokeStyle='#8a6a3a';cx.lineWidth=1.2;
+  if(s.kind==='mound'){cx.beginPath();cx.ellipse(x,y+2,30,16,0,Math.PI,0);cx.fill();cx.fillStyle='#a8834e';for(var i=-1;i<=1;i++){cx.fillRect(x+i*12-4,y-12+Math.abs(i)*4,8,10-Math.abs(i)*3);}}
+  else if(s.kind==='church'){cx.fillRect(x-22,y-26,44,26);cx.beginPath();cx.moveTo(x-25,y-26);cx.lineTo(x,y-42);cx.lineTo(x+25,y-26);cx.fill();cx.fillRect(x+12,y-56,10,30);cx.fillStyle='#5b4526';cx.beginPath();cx.arc(x,y-8,6,Math.PI,0);cx.rect(x-6,y-8,12,8);cx.fill();}
+  else if(s.kind==='columns'){for(var j=0;j<4;j++){var h=[34,26,38,18][j];cx.fillRect(x-24+j*15,y-h,7,h);cx.fillRect(x-26+j*15,y-h-3,11,3);}cx.fillRect(x-28,y-2,60,3);}
+  else if(s.kind==='minaret'){cx.fillRect(x-5,y-66,10,66);cx.fillRect(x-8,y-48,16,4);cx.beginPath();cx.moveTo(x-6,y-66);cx.lineTo(x,y-84);cx.lineTo(x+6,y-66);cx.fill();cx.fillRect(x-30,y-16,22,16);}
+  cx.restore();
+}
+function frame(now){
+  var t=now||0;
+  // water level: slow drawdown & refill cycle (~16 s), with a little seasonal ripple
+  var ph=(Math.sin(t*0.00039 - Math.PI/2)+1)/2;            // 0 = full, 1 = lowest
+  ph=Math.min(1,Math.max(0,ph+0.05*Math.sin(t*0.0013)));
+  var wl=TOP()+(LOW()-TOP())*ph;
+  var falling=Math.cos(t*0.00039 - Math.PI/2)>0;
+  // sky
+  var g=cx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#06202a');g.addColorStop(.55,'#0d3a47');g.addColorStop(1,'#123f4a');
+  cx.fillStyle=g;cx.fillRect(0,0,W,H);
+  // sun glow
+  var sx=W*(mobile()?.8:.84),sy=H*.2;var rg=cx.createRadialGradient(sx,sy,0,sx,sy,H*.35);rg.addColorStop(0,'rgba(240,200,130,.35)');rg.addColorStop(1,'rgba(240,200,130,0)');cx.fillStyle=rg;cx.fillRect(0,0,W,H);
+  cx.fillStyle='rgba(250,220,160,.85)';cx.beginPath();cx.arc(sx,sy,18,0,7);cx.fill();
+  drawMountains(t);
+  // ground with strata
+  groundPath();var gg=cx.createLinearGradient(0,rimY(),0,H);gg.addColorStop(0,'#6b5435');gg.addColorStop(.5,'#4f3c25');gg.addColorStop(1,'#33271a');cx.fillStyle=gg;cx.fill();
+  cx.save();groundPath();cx.clip();
+  // bathtub rings (former shorelines) between top and lowest level
+  for(var k=0;k<9;k++){var yy=TOP()+k*(LOW()-TOP())/8;cx.fillStyle='rgba(230,215,185,'+(0.10+0.05*(k%2))+')';cx.fillRect(0,yy,W,3);}
+  // wet band just above the water line
+  var wb=cx.createLinearGradient(0,wl-30,0,wl);wb.addColorStop(0,'rgba(20,40,40,0)');wb.addColorStop(1,'rgba(20,40,40,.45)');cx.fillStyle=wb;cx.fillRect(0,wl-30,W,30);
+  cx.restore();
+  // heritage sites on the valley floor/slopes
+  var labels=[],nExp=0;
+  SITES.forEach(function(s,i){
+    var x=W*vx()+s.f*W*vw(s.f);var y=ground(x);
+    var exposed=Math.max(0,Math.min(1,(wl-y)/18));          // 0 under water, 1 base dry
+    drawSite(s,x,y,1);
+    if(exposed>0.6)nExp++;
+    if(exposed>0.6&&!mobile()){var hh={mound:22,church:56,columns:40,minaret:84}[s.kind];labels.push({x:x,y:y-hh-26,a:(exposed-0.6)/0.4,s:s});}
+  });
+  // water body: fill below the wavy surface, clipped to the space above the ground surface
+  cx.save();
+  cx.beginPath();cx.moveTo(0,-10);for(var x2=0;x2<=W;x2+=4)cx.lineTo(x2,ground(x2));cx.lineTo(W,-10);cx.closePath();cx.clip();
+  cx.beginPath();cx.moveTo(0,H);
+  for(var x=0;x<=W;x+=6){var wy=wl+Math.sin(x*.025+t*.002)*2.2+Math.sin(x*.06-t*.003)*1.2;cx.lineTo(x,wy);}
+  cx.lineTo(W,H);cx.closePath();
+  var wg=cx.createLinearGradient(0,wl,0,H);wg.addColorStop(0,'rgba(63,182,198,.80)');wg.addColorStop(.35,'rgba(20,110,128,.86)');wg.addColorStop(1,'rgba(8,52,64,.93)');
+  cx.fillStyle=wg;cx.fill();
+  cx.restore();
+  // shimmer on the surface
+  cx.strokeStyle='rgba(255,255,255,.35)';cx.lineWidth=1;
+  for(var i=0;i<14;i++){var px=((i*137+t*.03)%W);var lx=W*vx()-W*vw(-1)*0.9,rx=W*vx()+W*vw(1)*0.9;if(px<lx||px>rx)continue;var py=wl+6+(i%5)*9;if(ground(px)<py)continue;cx.beginPath();cx.moveTo(px,py);cx.lineTo(px+18+(i%3)*8,py);cx.stroke();}
+  // labels
+  labels.forEach(function(L){var txt=lang==='tr'?L.s.tr:L.s.en;cx.save();cx.globalAlpha=L.a;cx.font='600 12px "Source Sans 3",system-ui,sans-serif';var w=cx.measureText(txt).width+18;
+    cx.fillStyle='rgba(215,166,95,.95)';cx.beginPath();if(cx.roundRect)cx.roundRect(L.x-w/2,L.y-12,w,22,11);else cx.rect(L.x-w/2,L.y-12,w,22);cx.fill();
+    cx.fillStyle='#1d1407';cx.textAlign='center';cx.fillText(txt,L.x,L.y+3);cx.strokeStyle='rgba(215,166,95,.8)';cx.beginPath();cx.moveTo(L.x,L.y+10);cx.lineTo(L.x,L.y+22);cx.stroke();cx.restore();});
+  // gauge
+  var pct=Math.round(100-ph*85);
+  document.getElementById('gVal').textContent=pct+'%';
+  document.getElementById('gBar').style.width=pct+'%';
+  var st=document.getElementById('gState');
+  if(nExp){st.textContent=lang==='tr'?('Açığa çıkan miras: '+nExp):('Heritage exposed: '+nExp);st.className='state warn';}
+  else{st.textContent=falling?(lang==='tr'?'Su çekiliyor…':'Drawdown in progress…'):(lang==='tr'?'Baraj doluyor…':'Refilling…');st.className='state';}
+  if(!reduce)requestAnimationFrame(frame);
+}
+
+/* ---------- start ---------- */
+var qp=new URLSearchParams(location.search).get('lang');
+setLang(qp==='tr'||qp==='en'?qp:((navigator.language||'').toLowerCase().indexOf('tr')===0?'tr':'en'));
+typeLoop();
+if(reduce){frame(4000);}else{requestAnimationFrame(frame);}
 })();
 </script>
 </body>
