@@ -3,218 +3,247 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Selman Er · Geomorphology, Geoarchaeology & Heritage Risk</title>
-<meta name="description" content="Assoc. Prof. Dr. Selman Er, İnönü University — geomorphology, geoarchaeology, geoheritage, GIS and remote sensing. Heritage risk in lakes and reservoirs under a changing climate.">
-<meta property="og:title" content="Selman Er · Geomorphology & Geoarchaeology">
+<title>Assoc. Prof. Dr. Selman Er · Geological Engineer & Geoarchaeologist</title>
+<meta name="description" content="Assoc. Prof. Dr. Selman Er, Department of Geography, İnönü University — engineering geology, heritage stone, geoarchaeology, geomorphology, geoheritage and GIS.">
+<meta property="og:title" content="Assoc. Prof. Dr. Selman Er">
+<meta property="og:description" content="Engineering geology · Geoarchaeology · Geomorphology · İnönü University">
 <meta property="og:image" content="https://erselman.github.io/assets/selman-er.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
-<style>
-:root{--deep:#07222b;--teal:#0f5c6e;--aqua:#3fb6c6;--sand:#d7a65f}
-body{background:#f4f7f6}
-/* header over hero */
-header.site{position:fixed;top:0;left:0;right:0;z-index:20;background:transparent;border:0;transition:background .3s,box-shadow .3s}
-header.site.solid{background:rgba(7,34,43,.92);backdrop-filter:blur(8px);box-shadow:0 2px 20px rgba(0,0,0,.2)}
-header.site .brand,header.site nav a{color:#e9f4f6}
-header.site nav a:hover{color:var(--aqua)}
-header.site .lang{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
-/* HERO */
-.hero2{position:relative;min-height:100vh;min-height:100svh;background:var(--deep);color:#fff;overflow:hidden;display:flex;align-items:center}
-#scene{position:absolute;inset:0;width:100%;height:100%;display:block}
-.hero2::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,34,43,.88) 0%,rgba(7,34,43,.55) 38%,rgba(7,34,43,0) 62%);pointer-events:none}
-.hero2 .wrap{position:relative;z-index:2;width:100%;padding-top:90px;padding-bottom:90px}
-.intro{max-width:560px}
-.portrait{position:relative;width:148px;height:148px;margin-bottom:22px}
-.portrait::before{content:"";position:absolute;inset:-6px;border-radius:50%;background:conic-gradient(from 0deg,var(--aqua),var(--sand),var(--aqua),transparent 70%,var(--aqua));animation:spin 6s linear infinite}
-.portrait::after{content:"";position:absolute;inset:-2px;border-radius:50%;background:var(--deep)}
-.portrait img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:50% 22%;border-radius:50%;border:3px solid rgba(255,255,255,.9)}
-.portrait .pulse{position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--aqua);animation:pulse 3s ease-out infinite;z-index:0}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.35);opacity:0}}
-.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;color:var(--aqua);font-weight:700;margin:0 0 10px}
-.hero2 h1{font-family:"Source Serif 4",Georgia,serif;font-weight:700;font-size:clamp(2.2rem,5.4vw,3.6rem);line-height:1.05;margin:0 0 12px}
-.rot{display:block;font-size:clamp(1.15rem,2.4vw,1.55rem);font-weight:600;color:#cfe9ee;min-height:1.6em;margin-bottom:18px}
-.rot b{color:var(--sand);font-weight:700;border-right:2px solid var(--sand);padding-right:3px;animation:caret 1s steps(1) infinite}
-@keyframes caret{50%{border-color:transparent}}
-.hero2 .lede{font-size:1.06rem;color:#d6e8ec;max-width:52ch;margin:0 0 24px}
-.cta{display:flex;flex-wrap:wrap;gap:10px}
-.btn2{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s}
-.btn2.primary{background:var(--sand);color:#1d1407;box-shadow:0 6px 24px rgba(215,166,95,.35)}
-.btn2.ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff}
-.btn2:hover{transform:translateY(-2px)}
-.btn2.ghost:hover{background:rgba(255,255,255,.1);color:#fff}
-.btn2.primary:hover{color:#1d1407;box-shadow:0 10px 30px rgba(215,166,95,.5)}
-/* gauge */
-.gauge{position:absolute;z-index:3;right:22px;top:84px;background:rgba(7,34,43,.72);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:12px 16px;min-width:210px;font-size:.85rem}
-.gauge .lbl{opacity:.8;text-transform:uppercase;letter-spacing:.1em;font-size:.7rem}
-.gauge .val{font-family:"Source Serif 4",Georgia,serif;font-size:1.9rem;line-height:1.1;font-weight:700}
-.gauge .bar{height:6px;background:rgba(255,255,255,.15);border-radius:4px;overflow:hidden;margin:6px 0}
-.gauge .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--aqua),#7fd8e3);width:50%}
-.gauge .state{font-weight:700}
-.gauge .state.warn{color:var(--sand)}
-.scrollhint{position:absolute;z-index:3;left:50%;bottom:18px;transform:translateX(-50%);color:#cfe9ee;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;opacity:.8;animation:bob 2s ease-in-out infinite}
-@keyframes bob{50%{transform:translate(-50%,6px)}}
-/* ticker */
-.ticker{background:var(--teal);color:#fff;overflow:hidden;white-space:nowrap;border-top:1px solid rgba(255,255,255,.15)}
-.ticker .row{display:inline-flex;gap:46px;padding:12px 0;animation:tick 140s linear infinite}
-.ticker:hover .row{animation-play-state:paused}
-.ticker a{color:#fff;text-decoration:none;font-size:.92rem}
-.ticker a b{color:var(--sand);margin-right:8px;font-weight:700}
-@keyframes tick{to{transform:translateX(-50%)}}
-/* stats */
-.stats2{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px;position:relative;z-index:4}
-.stat2{background:#fff;border-radius:16px;padding:22px 20px;box-shadow:0 10px 30px rgba(7,34,43,.1);border:1px solid #e3ecee}
-.stat2 b{display:block;font-family:"Source Serif 4",Georgia,serif;font-size:2.5rem;line-height:1;color:var(--teal)}
-.stat2 span{font-size:.9rem;color:var(--muted)}
-/* sections */
-.sec{padding:80px 0}
-.sec h2{font-size:clamp(1.6rem,3.2vw,2.3rem);margin-bottom:8px}
-.sec .kick{color:var(--teal);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;margin:0 0 6px}
-.sec .sub2{color:var(--muted);max-width:62ch;margin:0 0 32px;font-size:1.05rem}
-.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.xcard{position:relative;background:#fff;border:1px solid #e3ecee;border-radius:18px;padding:24px;overflow:hidden;transition:transform .3s,box-shadow .3s}
-.xcard:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(7,34,43,.12)}
-.xcard::after{content:"";position:absolute;left:0;right:0;bottom:0;height:0;background:linear-gradient(180deg,rgba(63,182,198,0),rgba(63,182,198,.12));transition:height .5s}
-.xcard:hover::after{height:100%}
-.xcard .ic{width:52px;height:52px;border-radius:14px;background:#e6f4f6;display:grid;place-items:center;margin-bottom:14px}
-.xcard .ic svg{width:28px;height:28px;stroke:var(--teal);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.xcard h3{font-size:1.12rem;margin:0 0 6px}
-.xcard p{margin:0;color:#3d4c55;font-size:.96rem}
-/* projects */
-.proj{display:grid;grid-template-columns:1.2fr 1fr;gap:18px}
-.pcard{position:relative;border-radius:20px;overflow:hidden;min-height:300px;color:#fff;text-decoration:none;display:flex;flex-direction:column;justify-content:flex-end;padding:26px;transition:transform .3s}
-.pcard:hover{transform:scale(1.015);color:#fff}
-.pcard.a{background:linear-gradient(160deg,#0b3a47,#0f5c6e 60%,#2a8a9b)}
-.pcard.b{background:linear-gradient(160deg,#3a2a12,#8a5f2a 60%,#d7a65f)}
-.pcard .waves{position:absolute;left:-10%;right:-10%;bottom:0;height:120px;opacity:.35}
-.pcard .waves path{animation:drift 9s ease-in-out infinite alternate}
-@keyframes drift{to{transform:translateX(-60px)}}
-.pcard .tag2{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85;position:relative}
-.pcard h3{font-family:"Source Serif 4",Georgia,serif;font-size:1.6rem;margin:6px 0;position:relative}
-.pcard p{position:relative;margin:0 0 10px;opacity:.92}
-.pcard .go{position:relative;font-weight:700}
-/* collab band */
-.band{background:linear-gradient(120deg,var(--deep),#0f5c6e);color:#fff;border-radius:24px;padding:44px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center;position:relative;overflow:hidden}
-.band h2{color:#fff}
-.band ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.band li{display:flex;gap:10px;align-items:flex-start;color:#d6e8ec}
-.band li::before{content:"";flex:0 0 10px;height:10px;border-radius:50%;background:var(--sand);margin-top:8px}
-.band .bubble{position:absolute;border-radius:50%;background:rgba(127,216,227,.12);animation:rise 12s linear infinite}
-@keyframes rise{from{transform:translateY(120%)}to{transform:translateY(-140%)}}
-.aff{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.aff > span{background:#fff;border:1px solid #e3ecee;border-radius:999px;padding:8px 16px;font-size:.9rem;color:#3d4c55}
-/* reveal */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
-.rv.in{opacity:1;transform:none}
-footer a{color:#e6eef0}
-@media (max-width:900px){
-  .cards3{grid-template-columns:1fr 1fr}.proj,.band{grid-template-columns:1fr}
-  .stats2{grid-template-columns:1fr 1fr}
-  .hero2::after{background:linear-gradient(180deg,rgba(7,34,43,.85) 0%,rgba(7,34,43,.55) 55%,rgba(7,34,43,.2) 100%)}
-}
-@media (max-width:600px){
-  .cards3{grid-template-columns:1fr}.gauge{left:16px;right:16px;top:auto;bottom:16px;min-width:0}.scrollhint{display:none}
-  header.site nav a.hide-s{display:none}.band{padding:28px}.portrait{width:120px;height:120px}
-  .hero2 .wrap{padding-bottom:150px}
-}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body data-lang="en">
 <header class="site" id="hdr"><div class="wrap">
   <a class="brand" href="./">Selman Er</a>
   <nav>
-    <a class="hide-s" href="#expertise"><span class="en">Expertise</span><span class="tr">Uzmanlık</span></a>
-    <a href="#projects"><span class="en">Projects</span><span class="tr">Projeler</span></a>
-    <a class="hide-s" href="#collaborate"><span class="en">Collaborate</span><span class="tr">İş birliği</span></a>
+    <a class="hide-s" href="#about"><span class="en">About</span><span class="tr">Hakkımda</span></a>
+    <a class="hide-s" href="#journey"><span class="en">Career</span><span class="tr">Kariyer</span></a>
+    <a class="hide-s" href="#publications"><span class="en">Publications</span><span class="tr">Yayınlar</span></a>
+    <a href="cop31/" style="color:#f3d9ae;font-weight:700">COP31</a>
     <button class="lang" id="langBtn" type="button" aria-label="Switch language">TR</button>
   </nav>
 </div></header>
 
-<section class="hero2" id="top">
-  <canvas id="scene" aria-hidden="true"></canvas>
+<section class="hero-cv" id="top">
+  <canvas id="strata" aria-hidden="true"></canvas>
   <div class="wrap">
-    <div class="intro">
-      <div class="portrait"><span class="pulse"></span><img src="assets/selman-er.jpg" alt="Assoc. Prof. Dr. Selman Er"></div>
-      <p class="eyebrow"><span class="en">Geomorphology · Geoarchaeology · GIS</span><span class="tr">Jeomorfoloji · Jeoarkeoloji · CBS</span></p>
-      <h1>Selman Er</h1>
-      <span class="rot"><span class="en">Assoc. Prof. Dr. — </span><span class="tr">Doç. Dr. — </span><b id="rotWord">&nbsp;</b></span>
-      <p class="lede"><span class="en">When lakes and reservoirs fall, buried history surfaces — and becomes vulnerable. I map, model and monitor the landscapes where water, tectonics and cultural heritage meet.</span><span class="tr">Göller ve barajlar çekildiğinde gömülü tarih yüzeye çıkar — ve savunmasız kalır. Su, tektonik ve kültürel mirasın buluştuğu peyzajları haritalıyor, modelliyor ve izliyorum.</span></p>
-      <div class="cta">
-        <a class="btn2 primary" href="cop31/"><span class="en">COP31 project</span><span class="tr">COP31 projesi</span> →</a>
-        <a class="btn2 ghost" href="cop31/news/"><span class="en">News atlas</span><span class="tr">Haber atlası</span></a>
-        <a class="btn2 ghost" href="#collaborate"><span class="en">Work with me</span><span class="tr">Birlikte çalışalım</span></a>
+    <div class="hero-grid">
+      <div>
+        <a class="cop-pill" href="cop31/"><span class="nw">COP31</span><span class="en">Featured at the Green Zone, Antalya →</span><span class="tr">Yeşil Bölge'de sunuluyor, Antalya →</span></a>
+        <p class="eyebrow"><span class="en">Associate Professor · İnönü University</span><span class="tr">Doçent · İnönü Üniversitesi</span></p>
+        <h1>Selman Er</h1>
+        <span class="rot"><span class="en">Assoc. Prof. Dr. — </span><span class="tr">Doç. Dr. — </span><b id="rotWord">&nbsp;</b></span>
+        <p class="lede"><span class="en">Geological engineer turned geoarchaeologist. Two decades from quarry faces and tunnel sites to Neolithic mounds — reading stone and landscape to protect heritage and inform real-world decisions.</span><span class="tr">Jeoarkeolojiye uzanan bir jeoloji mühendisi. Ocak aynalarından ve tünel şantiyelerinden Neolitik höyüklere yirmi yıl — mirası korumak ve gerçek kararlara yön vermek için taşı ve peyzajı okuyorum.</span></p>
+        <div class="cta">
+          <a class="btn2 primary" href="#about"><span class="en">Explore my career</span><span class="tr">Kariyerimi keşfedin</span> ↓</a>
+          <a class="btn2 ghost" href="#publications"><span class="en">Publications</span><span class="tr">Yayınlar</span></a>
+          <a class="btn2 ghost" href="mailto:selman.er@inonu.edu.tr"><span class="en">Contact</span><span class="tr">İletişim</span></a>
+        </div>
+      </div>
+      <div class="ph">
+        <div class="frame"><img src="assets/selman-er-full.jpg" alt="Assoc. Prof. Dr. Selman Er"></div>
+        <div class="tagc"><b>h-index 7</b>Web of Science</div>
+        <div class="tagc tagc2"><b>3×</b><span class="en">Erguvanlı Award</span><span class="tr">Erguvanlı Ödülü</span></div>
       </div>
     </div>
-  </div>
-  <div class="gauge" aria-live="off">
-    <div class="lbl"><span class="en">Simulated reservoir level</span><span class="tr">Temsili baraj doluluğu</span></div>
-    <div class="val" id="gVal">—</div>
-    <div class="bar"><i id="gBar"></i></div>
-    <div class="state" id="gState">—</div>
   </div>
   <div class="scrollhint">▾ <span class="en">scroll</span><span class="tr">kaydır</span></div>
 </section>
 
-<div class="ticker" aria-label="Latest reports"><div class="row" id="tickRow"></div></div>
-
 <main class="wrap">
   <div class="stats2">
-    <div class="stat2 rv"><b data-count="67">0</b><span class="en">news reports in the heritage atlas</span><span class="tr">haber, miras atlasında</span></div>
-    <div class="stat2 rv"><b data-count="14">0</b><span class="en">countries covered</span><span class="tr">ülke</span></div>
-    <div class="stat2 rv"><b data-count="4">0</b><span class="en">pilot lake & reservoir landscapes</span><span class="tr">pilot göl ve baraj alanı</span></div>
-    <div class="stat2 rv"><b data-count="7">0</b><span class="en">drawdown-zone processes modelled</span><span class="tr">salınım kuşağı süreci</span></div>
+    <div class="stat2 rv"><b data-count="14">0</b><span class="en">SCI/SCIE journal articles</span><span class="tr">SCI/SCIE makale</span></div>
+    <div class="stat2 rv"><b data-count="7">0</b><span class="en">Web of Science h-index (2025)</span><span class="tr">Web of Science h-indeksi (2025)</span></div>
+    <div class="stat2 rv"><b data-count="15" data-plus="1">0</b><span class="en">excavation & survey seasons</span><span class="tr">kazı ve yüzey araştırması sezonu</span></div>
+    <div class="stat2 rv"><b data-count="10">0</b><span class="en">funded research projects (TÜBİTAK, DFG, BAP)</span><span class="tr">destekli araştırma projesi (TÜBİTAK, DFG, BAP)</span></div>
   </div>
 
-  <section class="sec" id="expertise">
-    <p class="kick rv"><span class="en">Expertise</span><span class="tr">Uzmanlık</span></p>
-    <h2 class="rv"><span class="en">Reading landscapes, protecting heritage</span><span class="tr">Peyzajı okumak, mirası korumak</span></h2>
-    <p class="sub2 rv"><span class="en">Field-based earth science combined with spatial analytics — from fault scarps to drowned mounds.</span><span class="tr">Arazi temelli yer bilimi ve mekânsal analitik — fay sarplıklarından batık höyüklere.</span></p>
-    <div class="cards3">
-      <div class="xcard rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M2 20l6-9 4 5 3-4 7 8z"/><path d="M14 4l-2 6 4 1-2 6"/></svg></div>
-        <h3><span class="en">Geomorphology & morphotectonics</span><span class="tr">Jeomorfoloji ve morfotektonik</span></h3>
-        <p><span class="en">Active-fault landscapes of the East Anatolian Fault Zone and their geomorphic signatures.</span><span class="tr">Doğu Anadolu Fay Zonu'nda aktif fay peyzajları ve jeomorfolojik izleri.</span></p></div>
-      <div class="xcard rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 19h18"/><path d="M5 19c1-5 4-8 7-8s6 3 7 8"/><path d="M9 15h6M8 17h8"/></svg></div>
-        <h3><span class="en">Geoarchaeology & predictive modelling</span><span class="tr">Jeoarkeoloji ve tahmin modellemesi</span></h3>
-        <p><span class="en">Palaeogeography of settlement and archaeological predictive models for survey planning.</span><span class="tr">Yerleşimin paleocoğrafyası ve yüzey araştırması planlaması için tahmin modelleri.</span></p></div>
-      <div class="xcard rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 15c3-2 6 2 9 0s6-2 9 0"/><path d="M3 19c3-2 6 2 9 0s6-2 9 0"/><path d="M8 11V5h8v6"/><path d="M12 5V3"/></svg></div>
-        <h3><span class="en">Water heritage & climate risk</span><span class="tr">Su mirası ve iklim riski</span></h3>
-        <p><span class="en">Exposure and vulnerability of lake- and reservoir-shore heritage under drought.</span><span class="tr">Kuraklık altında göl ve baraj kıyısı mirasının maruziyeti ve hassasiyeti.</span></p></div>
-      <div class="xcard rv"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
-        <h3><span class="en">GIS, remote sensing & GeoAI</span><span class="tr">CBS, uzaktan algılama ve GeoAI</span></h3>
-        <p><span class="en">Satellite time series, UAV photogrammetry and machine-learning workflows.</span><span class="tr">Uydu zaman serileri, İHA fotogrametrisi ve makine öğrenmesi iş akışları.</span></p></div>
-      <div class="xcard rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17v.5"/></svg></div>
-        <h3><span class="en">Natural hazards & mass movements</span><span class="tr">Doğal tehlikeler ve kütle hareketleri</span></h3>
-        <p><span class="en">Landslide and slope-failure assessment for disaster-risk planning.</span><span class="tr">Afet risk planlaması için heyelan ve şev duraysızlığı değerlendirmesi.</span></p></div>
-      <div class="xcard rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5-7-11a7 7 0 0114 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-        <h3><span class="en">Geoheritage & geotourism</span><span class="tr">Jeomiras ve jeoturizm</span></h3>
-        <p><span class="en">Inventory, assessment and geocultural interpretation of geosites.</span><span class="tr">Jeositlerin envanteri, değerlendirmesi ve jeokültürel yorumu.</span></p></div>
+  <a class="copband rv" href="cop31/">
+    <svg viewBox="0 0 600 50" preserveAspectRatio="none"><path d="M0 25 Q50 5 100 25 T200 25 T300 25 T400 25 T500 25 T600 25 T700 25 V50 H0Z" fill="#7fd8e3"/></svg>
+    <div><span style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#f3d9ae">COP31 · Antalya · 13.11.2026</span>
+      <b><span class="en">Drawdown-zone heritage under a changing climate</span><span class="tr">Değişen iklimde salınım kuşağı mirası</span></b>
+      <span style="opacity:.9"><span class="en">Explore the interactive project page and the global news atlas.</span><span class="tr">Etkileşimli proje sayfasını ve küresel haber atlasını keşfedin.</span></span></div>
+    <span class="arrow">→</span>
+  </a>
+
+  <!-- ABOUT -->
+  <section class="sec" id="about">
+    <div class="about">
+      <div class="aphoto rv"><img src="assets/selman-er-full.jpg" alt="Selman Er" loading="lazy"><span class="badge"><b>20+</b><span class="en">years from quarry to excavation</span><span class="tr">yıl, ocaktan kazıya</span></span></div>
+      <div class="rv">
+        <p class="kick"><span class="en">About</span><span class="tr">Hakkımda</span></p>
+        <h2><span class="en">An engineer who reads stone, landscape and the past</span><span class="tr">Taşı, peyzajı ve geçmişi okuyan bir mühendis</span></h2>
+        <p class="sub2" style="margin-bottom:14px"><span class="en">I began as a marble technician, trained as a geological engineer and completed an MSc and PhD in applied geology at Istanbul University. Five years on construction and tunnel sites — as site engineer at Be-Ce Mühendislik and field engineer at Avrasya Tünel İşletmeciliği — grounded my research in real-world engineering problems.</span><span class="tr">Mermer teknikeri olarak başladım; İstanbul Üniversitesi'nde jeoloji mühendisliği lisansı, uygulamalı jeoloji yüksek lisansı ve doktorasını tamamladım. Be-Ce Mühendislik'te şantiye mühendisi ve şefi, Avrasya Tünel İşletmeciliği'nde saha mühendisi olarak geçen beş yıl, araştırmalarımı gerçek mühendislik problemlerine dayandırdı.</span></p>
+        <p class="sub2" style="margin-bottom:14px"><span class="en">A second degree in archaeology (Protohistory and Near Eastern Archaeology, 2021) opened the door to geoarchaeology. Since 2020 I have taught at İnönü University's Department of Geography, where I became Associate Professor in 2026, combining engineering geology, geomorphology and GIS to study natural stone, heritage sites and the landscapes around them.</span><span class="tr">Arkeoloji alanındaki ikinci lisansım (Protohistorya ve Önasya Arkeolojisi, 2021) jeoarkeolojiye kapı açtı. 2020'den bu yana İnönü Üniversitesi Coğrafya Bölümü'nde görev yapıyorum; 2026'da doçent oldum. Mühendislik jeolojisi, jeomorfoloji ve CBS'yi birleştirerek doğal taşı, miras alanlarını ve onları çevreleyen peyzajları çalışıyorum.</span></p>
+        <div class="chips2"><span>Geological Engineering</span><span>Applied Geology PhD</span><span>Archaeology BA</span><span>Geography</span><span>English · YÖKDİL 70</span></div>
+      </div>
     </div>
   </section>
 
-  <section class="sec" id="projects" style="padding-top:20px">
-    <p class="kick rv"><span class="en">Projects</span><span class="tr">Projeler</span></p>
+  <!-- TIMELINE -->
+  <section class="sec" id="journey" style="padding-top:10px">
+    <p class="kick rv"><span class="en">Journey</span><span class="tr">Yolculuk</span></p>
+    <h2 class="rv"><span class="en">From the quarry face to the excavation trench</span><span class="tr">Ocak aynasından kazı açmasına</span></h2>
+    <div class="tl">
+      <div class="tli rv"><b>1999</b><h4><span class="en">Marble Technician</span><span class="tr">Mermer Teknikeri</span></h4><p><span class="en">Dokuz Eylül University, Torbalı Vocational School — graduated second in class.</span><span class="tr">Dokuz Eylül Üniversitesi, Torbalı MYO — yüksekokul ikincisi.</span></p></div>
+      <div class="tli rv"><b>2004</b><h4><span class="en">BSc Geological Engineering</span><span class="tr">Jeoloji Mühendisliği Lisans</span></h4><p><span class="en">Istanbul University. Thesis on Marmara marble as a building stone.</span><span class="tr">İstanbul Üniversitesi. Tez: Marmara mermerinin yapı malzemesi olarak değerlendirilmesi.</span></p></div>
+      <div class="tli rv ind"><b>2005–2010</b><h4><span class="en">Engineering in the field</span><span class="tr">Sahada mühendislik</span></h4><p><span class="en">Site engineer & site chief, Be-Ce Mühendislik; field engineer, Avrasya Tünel İşletmeciliği.</span><span class="tr">Be-Ce Mühendislik'te şantiye mühendisi ve şefi; Avrasya Tünel İşletmeciliği'nde saha mühendisi.</span></p></div>
+      <div class="tli rv"><b>2012</b><h4><span class="en">MSc Applied Geology</span><span class="tr">Uygulamalı Jeoloji Yüksek Lisans</span></h4><p><span class="en">Physico-mechanical properties and CERCHAR abrasivity of granitic rocks.</span><span class="tr">Granitik kayaçların fiziko-mekanik özellikleri ve CERCHAR aşınma indeksi.</span></p></div>
+      <div class="tli rv"><b>2017</b><h4><span class="en">PhD Applied Geology</span><span class="tr">Uygulamalı Jeoloji Doktora</span></h4><p><span class="en">Natural vs. melted basalts — usability for different purposes. TÜBİTAK 2211-D fellow.</span><span class="tr">Doğal ve ergitilmiş bazaltların farklı amaçlarla kullanılabilirliği. TÜBİTAK 2211-D bursiyeri.</span></p></div>
+      <div class="tli rv"><b>2019–2023</b><h4><span class="en">DFG project, Aşağı Pınar</span><span class="tr">DFG projesi, Aşağı Pınar</span></h4><p><span class="en">Geoarchaeology of the Neolithic ditches (German Research Foundation).</span><span class="tr">Neolitik hendeklerin jeoarkeolojisi (Alman Araştırma Kurumu).</span></p></div>
+      <div class="tli rv"><b>2020</b><h4><span class="en">İnönü University</span><span class="tr">İnönü Üniversitesi</span></h4><p><span class="en">Faculty member, Department of Geography, Malatya.</span><span class="tr">Coğrafya Bölümü öğretim üyesi, Malatya.</span></p></div>
+      <div class="tli rv"><b>2021</b><h4><span class="en">BA Archaeology</span><span class="tr">Arkeoloji Lisans</span></h4><p><span class="en">Protohistory & Near Eastern Archaeology, Istanbul University.</span><span class="tr">Protohistorya ve Önasya Arkeolojisi, İstanbul Üniversitesi.</span></p></div>
+      <div class="tli rv hl"><b>2026</b><h4><span class="en">Associate Professor</span><span class="tr">Doçent</span></h4><p><span class="en">COP31 Green Zone presenter; secretary of the Geology of Istanbul Symposium 7.</span><span class="tr">COP31 Yeşil Bölge sunumu; İstanbul'un Jeolojisi Sempozyumu-7 sekreteri.</span></p></div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section class="sec" id="expertise" style="padding-top:10px">
+    <p class="kick rv"><span class="en">Expertise</span><span class="tr">Uzmanlık</span></p>
+    <h2 class="rv"><span class="en">Six fields, one landscape</span><span class="tr">Altı alan, tek peyzaj</span></h2>
+    <p class="sub2 rv"><span class="en">Laboratory rock testing, field mapping and spatial analytics — from quarry slopes to drowned mounds.</span><span class="tr">Laboratuvar kaya deneyleri, arazi haritalaması ve mekânsal analitik — ocak şevlerinden batık höyüklere.</span></p>
+    <div class="cards3">
+      <div class="xcard rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M5 20V9l7-5 7 5v11"/><path d="M9 20v-6h6v6"/></svg></div>
+        <h3><span class="en">Engineering geology & rock mechanics</span><span class="tr">Mühendislik jeolojisi ve kaya mekaniği</span></h3>
+        <p><span class="en">Abrasivity, cuttability, brittleness and slope stability for quarries, tunnels and infrastructure.</span><span class="tr">Ocak, tünel ve altyapı için aşındırıcılık, kesilebilirlik, kırılganlık ve şev duraylılığı.</span></p></div>
+      <div class="xcard rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12"/><path d="M8 21v-8M12 21v-8M16 21v-8"/><path d="M3 21h18"/></svg></div>
+        <h3><span class="en">Heritage stone & archaeometry</span><span class="tr">Miras taşı ve arkeometri</span></h3>
+        <p><span class="en">Marble, basalt and building stones of monuments — provenance, deterioration and conservation.</span><span class="tr">Anıtların mermer, bazalt ve yapı taşları — köken, bozunma ve koruma.</span></p></div>
+      <div class="xcard rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 19h18"/><path d="M5 19c1-5 4-8 7-8s6 3 7 8"/><path d="M9 15h6M8 17h8"/></svg></div>
+        <h3><span class="en">Geoarchaeology & predictive modelling</span><span class="tr">Jeoarkeoloji ve tahmin modellemesi</span></h3>
+        <p><span class="en">Site formation, palaeolandscapes and GIS-based models of Neolithic settlement.</span><span class="tr">Alan oluşumu, paleopeyzaj ve Neolitik yerleşimin CBS tabanlı modelleri.</span></p></div>
+      <div class="xcard rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M2 20l6-9 4 5 3-4 7 8z"/><path d="M14 4l-2 6 4 1-2 6"/></svg></div>
+        <h3><span class="en">Geomorphology & morphotectonics</span><span class="tr">Jeomorfoloji ve morfotektonik</span></h3>
+        <p><span class="en">Tectonic geomorphology of the East Anatolian Fault Zone; erosion risk and karst landscapes.</span><span class="tr">Doğu Anadolu Fay Zonu'nun tektonik jeomorfolojisi; erozyon riski ve karst peyzajları.</span></p></div>
+      <div class="xcard rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5-7-11a7 7 0 0114 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3><span class="en">Geoheritage & geotourism</span><span class="tr">Jeomiras ve jeoturizm</span></h3>
+        <p><span class="en">Geosite inventories, accessibility models and ecotourism suitability with GIS.</span><span class="tr">Jeosit envanteri, erişilebilirlik modelleri ve CBS ile ekoturizm uygunluğu.</span></p></div>
+      <div class="xcard rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 15c3-2 6 2 9 0s6-2 9 0"/><path d="M3 19c3-2 6 2 9 0s6-2 9 0"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h3><span class="en">Water heritage, climate & GeoAI</span><span class="tr">Su mirası, iklim ve GeoAI</span></h3>
+        <p><span class="en">Remote sensing and machine learning for heritage at risk in lakes and reservoirs.</span><span class="tr">Göl ve barajlarda risk altındaki miras için uzaktan algılama ve makine öğrenmesi.</span></p></div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="sec" id="awards" style="padding-top:10px">
+    <div class="awards rv">
+      <div class="trophy"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0z"/><path d="M17 5h3v2a3 3 0 01-3 3M7 5H4v2a3 3 0 003 3"/></svg></div>
+      <div>
+        <p class="kick" style="color:var(--sand)"><span class="en">Recognition</span><span class="tr">Ödüller</span></p>
+        <h2 style="color:#fff"><span class="en">Erguvanlı Engineering Geology Award — at all three degree levels</span><span class="tr">Erguvanlı Mühendislik Jeolojisi Ödülü — üç düzeyin üçünde de</span></h2>
+        <div class="aw3">
+          <div><b>2005</b><span class="en">BSc thesis award</span><span class="tr">Lisans tezi ödülü</span></div>
+          <div><b>2013</b><span class="en">MSc thesis award</span><span class="tr">Yüksek lisans tezi ödülü</span></div>
+          <div><b>2018</b><span class="en">PhD thesis award</span><span class="tr">Doktora tezi ödülü</span></div>
+        </div>
+        <p style="color:#cfe3e7;margin:14px 0 0;font-size:.95rem"><span class="en">Engineering Geology Association / Turkish National Committee of Engineering Geology. TÜBİTAK 2211-D doctoral fellowship, 2015–2016.</span><span class="tr">Mühendislik Jeolojisi Derneği / Mühendislik Jeolojisi Türk Milli Komitesi. TÜBİTAK 2211-D doktora bursu, 2015–2016.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="sec" id="publications" style="padding-top:10px">
+    <p class="kick rv"><span class="en">Publications</span><span class="tr">Yayınlar</span></p>
+    <h2 class="rv"><span class="en">Selected journal articles</span><span class="tr">Seçilmiş makaleler</span></h2>
+    <div class="seg2 rv" id="pubSeg">
+      <button data-f="all" class="on"><span class="en">All</span><span class="tr">Tümü</span></button>
+      <button data-f="her"><span class="en">Heritage, geography & GIS</span><span class="tr">Miras, coğrafya ve CBS</span></button>
+      <button data-f="eng"><span class="en">Engineering geology & rock</span><span class="tr">Mühendislik jeolojisi ve kaya</span></button>
+    </div>
+    <div class="pubs" id="pubs"></div>
+    <p class="note rv" style="margin-top:14px"><span class="en">Full list of 14 SCI/SCIE articles, national papers and 40+ conference contributions available on request.</span><span class="tr">14 SCI/SCIE makale, ulusal makaleler ve 40'ı aşkın bildirinin tam listesi talep üzerine gönderilir.</span></p>
+  </section>
+
+  <!-- BOOKS -->
+  <section class="sec" id="books" style="padding-top:10px">
+    <p class="kick rv"><span class="en">Books & chapters</span><span class="tr">Kitaplar ve bölümler</span></p>
+    <h2 class="rv"><span class="en">On the shelf</span><span class="tr">Raftakiler</span></h2>
+    <div class="books">
+      <div class="book rv" style="--b:#0f5c6e"><span class="yr">2026</span><h4><span class="en">Malatya Hekimhan Atlas 2026</span><span class="tr">Malatya Hekimhan Atlası 2026</span></h4><p>Boyraz, Karadeniz, Er, Aydoğdu & Coşkun · İnönü University Press</p></div>
+      <div class="book rv" style="--b:#8a5f2a"><span class="yr">2026</span><h4>Aşağı Pınar III</h4><p><span class="en">Three chapters on ditch-fill geology, potsherd archaeometry and clay-ring geochemistry · Habelt</span><span class="tr">Hendek dolgusu jeolojisi, çanak çömlek arkeometrisi ve kil halka jeokimyası üzerine üç bölüm · Habelt</span></p></div>
+      <div class="book rv" style="--b:#5a6f9a"><span class="yr">—</span><h4>Et Yiyen Lahitler: Assos Sarkofagları</h4><p><span class="en">Savaşçın & Er · archaeomineralogy · Chamber of Geological Engineers</span><span class="tr">Savaşçın & Er · arkeomineraloji · TMMOB Jeoloji Mühendisleri Odası</span></p></div>
+      <div class="book rv" style="--b:#2a8a9b"><span class="yr">2021</span><h4>Jeolojik Miras</h4><p><span class="en">Edited volume · Kollektif Yayınevi</span><span class="tr">Editör · Kollektif Yayınevi</span></p></div>
+    </div>
+  </section>
+
+  <!-- FIELD -->
+  <section class="sec" id="field" style="padding-top:10px">
+    <p class="kick rv"><span class="en">In the field</span><span class="tr">Sahada</span></p>
+    <h2 class="rv"><span class="en">Excavations and surveys</span><span class="tr">Kazılar ve yüzey araştırmaları</span></h2>
+    <p class="sub2 rv"><span class="en">Geologist and geoarchaeologist on excavation teams across Anatolia and Thrace.</span><span class="tr">Anadolu ve Trakya'da kazı ekiplerinde jeolog ve jeoarkeolog olarak.</span></p>
+    <div class="field">
+      <div class="fd rv"><b>Sefertepe</b><span><span class="en">Neolithic, Şanlıurfa · 2022–2026</span><span class="tr">Neolitik, Şanlıurfa · 2022–2026</span></span></div>
+      <div class="fd rv"><b>Sırçalıtepe</b><span><span class="en">Excavation & research · 2021–2026</span><span class="tr">Kazı ve araştırmaları · 2021–2026</span></span></div>
+      <div class="fd rv"><b>Aşağı Pınar</b><span><span class="en">Neolithic ditches, DFG · 2019–2023</span><span class="tr">Neolitik hendekler, DFG · 2019–2023</span></span></div>
+      <div class="fd rv"><b>Amastris</b><span><span class="en">Ancient city · 2024</span><span class="tr">Antik kent · 2024</span></span></div>
+      <div class="fd rv"><b>OTTA</b><span><span class="en">Central Taurus prehistory · 2020, 2022</span><span class="tr">Orta Toroslar tarih öncesi · 2020, 2022</span></span></div>
+      <div class="fd rv"><b>Oluz Höyük</b><span><span class="en">Amasya · 2021</span><span class="tr">Amasya · 2021</span></span></div>
+      <div class="fd rv"><b>Malatya</b><span><span class="en">Bronze & Iron Age survey · 2021</span><span class="tr">Tunç ve Demir Çağı yüzey araştırması · 2021</span></span></div>
+      <div class="fd rv"><b>Beykoz</b><span><span class="en">İSTYA archaeological survey · 2019</span><span class="tr">İSTYA yüzey araştırması · 2019</span></span></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="sec" id="projects" style="padding-top:10px">
+    <p class="kick rv"><span class="en">Current projects</span><span class="tr">Güncel projeler</span></p>
     <h2 class="rv"><span class="en">Featured work</span><span class="tr">Öne çıkan çalışmalar</span></h2>
-    <p class="sub2 rv"><span class="en">Presented at the COP31 Green Zone, Antalya, 13 November 2026.</span><span class="tr">COP31 Yeşil Bölge'de sunuldu, Antalya, 13 Kasım 2026.</span></p>
     <div class="proj">
       <a class="pcard a rv" href="cop31/">
         <svg class="waves" viewBox="0 0 600 120" preserveAspectRatio="none"><path d="M0 60 Q75 30 150 60 T300 60 T450 60 T600 60 T750 60 V120 H0Z" fill="#7fd8e3"/><path d="M0 80 Q75 55 150 80 T300 80 T450 80 T600 80 T750 80 V120 H0Z" fill="#3fb6c6" style="animation-duration:12s"/></svg>
-        <span class="tag2">COP31 · Antalya</span>
+        <span class="tag2">COP31 · Antalya · 2026</span>
         <h3><span class="en">Drawdown-zone heritage under a changing climate</span><span class="tr">Değişen iklimde salınım kuşağı mirası</span></h3>
-        <p><span class="en">Monitoring and a climate-resilient conservation model for Karakaya, Keban, Lake İznik and the Lakes District.</span><span class="tr">Karakaya, Keban, İznik Gölü ve Göller Bölgesi için izleme ve iklime dirençli koruma modeli.</span></p>
-        <span class="go"><span class="en">Explore the project →</span><span class="tr">Projeyi incele →</span></span>
+        <p><span class="en">Monitoring and a climate-resilient conservation model for lakes and reservoirs.</span><span class="tr">Göl ve barajlar için izleme ve iklime dirençli koruma modeli.</span></p>
+        <span class="go"><span class="en">Explore →</span><span class="tr">İncele →</span></span>
       </a>
       <a class="pcard b rv" href="cop31/news/">
         <svg class="waves" viewBox="0 0 600 120" preserveAspectRatio="none"><path d="M0 70 Q75 40 150 70 T300 70 T450 70 T600 70 T750 70 V120 H0Z" fill="#f3d9ae"/></svg>
         <span class="tag2"><span class="en">Interactive atlas</span><span class="tr">Etkileşimli atlas</span></span>
         <h3><span class="en">When the water falls, heritage surfaces</span><span class="tr">Su çekildiğinde miras yüzeye çıkıyor</span></h3>
         <p><span class="en">67 reports from 14 countries on a live map.</span><span class="tr">14 ülkeden 67 haber, canlı haritada.</span></p>
-        <span class="go"><span class="en">Open the atlas →</span><span class="tr">Atlası aç →</span></span>
+        <span class="go"><span class="en">Open →</span><span class="tr">Aç →</span></span>
       </a>
+    </div>
+    <div class="mini rv">
+      <div><b>TÜBİTAK 1001 · 125Y220</b><span class="en">Obsidian archaeometry and supply networks at Pre-Pottery Neolithic Sefertepe (2025–2027)</span><span class="tr">Sefertepe'de Çanak Çömleksiz Neolitik obsidiyen arkeometrisi ve tedarik ağları (2025–2027)</span></div>
+      <div><b><span class="en">Supervised theses</span><span class="tr">Yönetilen tezler</span></b><span class="en">GIS spatial analysis of Neolithic sites in Şanlıurfa (MSc 2025) · Tectonic geomorphology of the Sürgü basin (MSc 2025)</span><span class="tr">Şanlıurfa Neolitik yerleşimlerinin CBS ile mekânsal analizi (YL 2025) · Sürgü Havzası tektonik jeomorfolojisi (YL 2025)</span></div>
     </div>
   </section>
 
+  <!-- TEACHING + EVENTS -->
+  <section class="sec" id="teaching" style="padding-top:10px">
+    <div class="two">
+      <div class="rv">
+        <p class="kick"><span class="en">Teaching</span><span class="tr">Dersler</span></p>
+        <h2 style="font-size:1.6rem"><span class="en">Courses at İnönü University</span><span class="tr">İnönü Üniversitesi'nde verilen dersler</span></h2>
+        <div class="chips2 lt">
+          <span><span class="en">Scientific Research Methods</span><span class="tr">Bilimsel Araştırma Yöntemleri</span></span>
+          <span><span class="en">Geomorphology of Türkiye</span><span class="tr">Türkiye Jeomorfolojisi</span></span>
+          <span><span class="en">Karst Geomorphology</span><span class="tr">Karst Jeomorfolojisi</span></span>
+          <span><span class="en">Structural Geomorphology</span><span class="tr">Yapısal Jeomorfoloji</span></span>
+          <span><span class="en">Geomorphology I–II</span><span class="tr">Jeomorfoloji I–II</span></span>
+          <span><span class="en">Hydrography</span><span class="tr">Hidrografya</span></span>
+          <span><span class="en">General Geology</span><span class="tr">Genel Jeoloji</span></span>
+          <span><span class="en">Minerals and Rocks</span><span class="tr">Mineraller ve Kayaçlar</span></span>
+          <span><span class="en">Cartography</span><span class="tr">Kartografya</span></span>
+          <span><span class="en">Geology for Civil Engineering</span><span class="tr">İnşaat Mühendisliği için Jeoloji</span></span>
+        </div>
+      </div>
+      <div class="rv">
+        <p class="kick"><span class="en">Community</span><span class="tr">Topluluk</span></p>
+        <h2 style="font-size:1.6rem"><span class="en">Events & outreach</span><span class="tr">Etkinlikler ve toplumsal katkı</span></h2>
+        <ul class="ev">
+          <li><b>2026</b><span class="en">Geology of Istanbul Symposium 7 — Secretary (İTÜ)</span><span class="tr">İstanbul'un Jeolojisi Sempozyumu-7 — Sekreter (İTÜ)</span></li>
+          <li><b>2025</b><span class="en">"Witnesses of Time: From Geological Layers to Archaeological Settlements" — İnönü 50th anniversary lecture</span><span class="tr">"Zamanın Tanıkları: Jeolojik Katmanlardan Arkeolojik Yerleşimlere" — İnönü 50. yıl konferansı</span></li>
+          <li><b>2025</b><span class="en">Natural heritage science talk for secondary-school students, Bismil (MEB Science Talks)</span><span class="tr">Ortaokul öğrencilerine doğal miras söyleşisi, Bismil (MEB Bilim Söyleşileri)</span></li>
+          <li><b>2025</b><span class="en">Gemology Workshop 3 — Organising committee</span><span class="tr">Gemoloji Çalıştayı 3 — Düzenleme kurulu</span></li>
+          <li><b>2014–23</b><span class="en">Geology of Istanbul Symposia 4, 5, 6 — Organising committee</span><span class="tr">İstanbul'un Jeolojisi Sempozyumu 4, 5, 6 — Düzenleme kurulu</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLAB -->
   <section class="sec" id="collaborate" style="padding-top:10px">
     <div class="band rv">
       <span class="bubble" style="width:120px;height:120px;right:8%;bottom:0;animation-delay:-2s"></span>
@@ -222,166 +251,83 @@ footer a{color:#e6eef0}
       <span class="bubble" style="width:90px;height:90px;right:18%;bottom:0;animation-delay:-4s;animation-duration:16s"></span>
       <div>
         <p class="kick" style="color:var(--sand)"><span class="en">Collaborate</span><span class="tr">İş birliği</span></p>
-        <h2><span class="en">Let's turn data into decisions</span><span class="tr">Veriyi karara dönüştürelim</span></h2>
-        <p style="color:#d6e8ec;max-width:52ch"><span class="en">I work with water agencies, heritage authorities, municipalities, universities and research consortia on applied projects, expert reports and training.</span><span class="tr">Su idareleri, miras kurumları, belediyeler, üniversiteler ve araştırma konsorsiyumlarıyla uygulamalı projeler, uzman raporları ve eğitimler yürütüyorum.</span></p>
+        <h2><span class="en">Industry-tested science for real decisions</span><span class="tr">Sahada sınanmış bilim, gerçek kararlar için</span></h2>
+        <p style="color:#d6e8ec;max-width:52ch"><span class="en">With site and tunnel engineering experience behind the research, I work with public agencies, municipalities, heritage authorities, companies and research consortia on applied projects, expert reports and training.</span><span class="tr">Araştırmanın arkasındaki şantiye ve tünel mühendisliği deneyimiyle kamu kurumları, belediyeler, miras kurumları, şirketler ve araştırma konsorsiyumlarıyla uygulamalı projeler, uzman raporları ve eğitimler yürütüyorum.</span></p>
         <div class="cta" style="margin-top:18px"><a class="btn2 primary" href="mailto:selman.er@inonu.edu.tr?subject=Collaboration">selman.er@inonu.edu.tr</a></div>
       </div>
       <ul>
+        <li><span class="en">Rock and natural-stone characterisation; abrasivity, cuttability and slope stability</span><span class="tr">Kaya ve doğal taş karakterizasyonu; aşındırıcılık, kesilebilirlik ve şev duraylılığı</span></li>
+        <li><span class="en">Deterioration diagnosis of historic stone buildings and monuments</span><span class="tr">Tarihi taş yapı ve anıtlarda bozunma tespiti</span></li>
+        <li><span class="en">Geoarchaeological and archaeometric analyses for excavations</span><span class="tr">Kazılar için jeoarkeolojik ve arkeometrik analizler</span></li>
         <li><span class="en">Heritage risk mapping for lakes and reservoirs</span><span class="tr">Göl ve barajlar için miras risk haritalaması</span></li>
-        <li><span class="en">Geoheritage inventories and geotourism planning</span><span class="tr">Jeomiras envanteri ve jeoturizm planlaması</span></li>
-        <li><span class="en">Archaeological predictive modelling for survey design</span><span class="tr">Yüzey araştırması tasarımı için arkeolojik tahmin modelleri</span></li>
-        <li><span class="en">GIS and remote-sensing analyses, UAV photogrammetry</span><span class="tr">CBS ve uzaktan algılama analizleri, İHA fotogrametrisi</span></li>
-        <li><span class="en">Workshops and training in geospatial methods</span><span class="tr">Mekânsal yöntemlerde çalıştay ve eğitimler</span></li>
+        <li><span class="en">Geoheritage inventories, geotourism and GIS atlases</span><span class="tr">Jeomiras envanteri, jeoturizm ve CBS atlasları</span></li>
       </ul>
     </div>
     <div class="aff rv">
       <span><span class="en">Department of Geography, İnönü University</span><span class="tr">İnönü Üniversitesi Coğrafya Bölümü</span></span>
       <span><span class="en">Member, COST Action CA23141 (MAIA)</span><span class="tr">Üye, COST Action CA23141 (MAIA)</span></span>
-      <span>Malatya, Türkiye</span>
+      <span><span class="en">Chamber of Geological Engineers (TMMOB)</span><span class="tr">TMMOB Jeoloji Mühendisleri Odası</span></span>
+      <span><span class="en">Engineering Geology Association</span><span class="tr">Mühendislik Jeolojisi Derneği</span></span>
     </div>
   </section>
 </main>
 
-<footer><div class="wrap">© 2026 Selman Er · <a href="mailto:selman.er@inonu.edu.tr">selman.er@inonu.edu.tr</a>
-  <p class="disclaimer"><span class="en">The animated reservoir in the header is an illustrative simulation, not live data.</span><span class="tr">Girişteki hareketli baraj kesiti temsili bir canlandırmadır, gerçek zamanlı veri değildir.</span></p>
-</div></footer>
 
-<script src="cop31/news/news-data.js"></script>
+<footer><div class="wrap">© 2026 Selman Er · <a href="mailto:selman.er@inonu.edu.tr">selman.er@inonu.edu.tr</a> · <span class="en">Department of Geography, İnönü University, Malatya</span><span class="tr">İnönü Üniversitesi Coğrafya Bölümü, Malatya</span></div></footer>
+
+<script src="assets/strata.js"></script>
 <script>
 (function(){
-var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-var b=document.body, lang='en';
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var b=document.body,lang='en';
+var PUBS=[
+ {y:2026,c:'her',t:'Marmara Marble: Geological, Cultural, and Technical Perspectives on a Global Heritage Stone',a:'Er, S.',j:'Geoheritage 18, 77',d:'10.1007/s12371-026-01310-w'},
+ {y:2026,c:'her',t:'Spatial Patterns of Biodiversity and Endemism Across Türkiye: A National-Scale Spatial Autocorrelation Analysis',a:'Geçen, R., Karadeniz, E., Sunbul, F., Er, S., Karabulut, M., Sengun, M.T.',j:'Land 15, 1428',d:'10.3390/land15081428'},
+ {y:2026,c:'her',t:'Bridging expert knowledge and machine intelligence: A hybrid spatial indicator framework for ecotourism suitability',a:'Karadeniz, E., Er, S., Aydogdu, M., Sunbul, F.',j:'Ecological Indicators 183, 114321',d:'10.1016/j.ecolind.2026.114321'},
+ {y:2024,c:'her',t:'Enhancing Geosite Accessibility Assessment: A Novel GIS Model',a:'Bilgic, S., Karadeniz, E., Er, S.',j:'Geoheritage 16, 62',d:'10.1007/s12371-024-00965-7'},
+ {y:2023,c:'eng',t:'Determination of drilling rate index based on mineralogical and textural properties of natural stones',a:'Tumac, D., Shaterpour-Mamaghani, A., Hojjati, S., Polat, C., Er, S., Copur, H., Balci, C.',j:'Bulletin of Engineering Geology and the Environment 82, 263',d:'10.1007/s10064-023-03279-0'},
+ {y:2022,c:'her',t:'Evaluation of Potential Geotourism of Levent Valley and Its Surroundings Using GIS Route Analysis',a:'Karadeniz, E., Er, S., Boyraz, Z., et al.',j:'Geoheritage 14, 77',d:'10.1007/s12371-022-00710-y'},
+ {y:2021,c:'eng',t:'A New Approach for the Prediction of Brittleness Index Based on Chemical Properties of Basaltic Rocks',a:'Bilen, C.A., Er, S., Tugrul, A., Yılmaz, M.',j:'Acta Geodynamica et Geomaterialia 18(3), 285–299',d:''},
+ {y:2019,c:'oth',t:'The Sarıçiçek howardite fall in Turkey: Source crater of HED meteorites on Vesta and impact risk of Vestoids',a:'Unsalan, O., Jenniskens, P., et al. (incl. Er, S.)',j:'Meteoritics & Planetary Science',d:'10.1111/maps.13258'},
+ {y:2018,c:'eng',t:'Investigation into the Effects of Textural Properties on Cuttability Performance of a Chisel Tool',a:'Tumac, D., Copur, H., Balci, C., Er, S., Avunduk, E.',j:'Rock Mechanics and Rock Engineering',d:'10.1007/s00603-017-1376-y'},
+ {y:2018,c:'eng',t:'Numerical modelling of steep slopes in open rock quarries',a:'Yılmaz, M., Ertin, A., Er, S., Tugrul, A.',j:'Journal of the Geological Society of India 91, 232',d:'10.1007/s12594-018-0841-x'},
+ {y:2017,c:'eng',t:'Investigating the effects of micro-texture and geo-mechanical properties on the abrasiveness of volcanic rocks',a:'Ündül, Ö., Er, S.',j:'Engineering Geology 229, 85–94',d:'10.1016/j.enggeo.2017.09.022'},
+ {y:2017,c:'eng',t:'Assessment of Excavatability, Abrasivity and Slope Stability in a Sandstone Quarry in Istanbul, Turkey',a:'Er, S., Yilmaz, M., Ertin, A., Tugrul, A., Tokgöz, N.',j:'Journal of the Geological Society of India 89',d:'10.1007/s12594-017-0647-2'},
+ {y:2016,c:'eng',t:'Correlation of physico-mechanical properties of granitic rocks with Cerchar Abrasivity Index in Turkey',a:'Er, S., Tuğrul, A.',j:'Measurement 91, 114–123',d:''},
+ {y:2016,c:'eng',t:'Estimation of Cerchar abrasivity index of granitic rocks in Turkey by geological properties using regression analysis',a:'Er, S., Tuğrul, A.',j:'Bulletin of Engineering Geology and the Environment 75(3), 1325–1339',d:''}
+];
+var pf='all';
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function renderPubs(){
+  var rows=PUBS.filter(function(p){return pf==='all'||p.c===pf;});
+  document.getElementById('pubs').innerHTML=rows.map(function(p,i){
+    var au=esc(p.a).replace(/Er, S\./g,'<b>Er, S.</b>');
+    return '<div class="pub" style="animation-delay:'+(i*0.04)+'s"><span class="y">'+p.y+'</span><div><div class="t">'+esc(p.t)+'</div><div class="m">'+au+' · <i>'+esc(p.j)+'</i></div></div>'+
+      (p.d?'<a class="doi" href="https://doi.org/'+p.d+'" target="_blank" rel="noopener">DOI ↗</a>':'<span></span>')+'</div>';}).join('');
+}
+document.querySelectorAll('#pubSeg button').forEach(function(bt){bt.onclick=function(){pf=bt.dataset.f;document.querySelectorAll('#pubSeg button').forEach(function(z){z.classList.toggle('on',z===bt);});renderPubs();};});
+renderPubs();
 
-/* ---------- language ---------- */
 var btn=document.getElementById('langBtn');
-function setLang(l){lang=l;b.setAttribute('data-lang',l);document.documentElement.lang=l;btn.textContent=l==='en'?'TR':'EN';buildTicker();}
-btn.addEventListener('click',function(){setLang(lang==='en'?'tr':'en');});
+function setLang(l){lang=l;b.setAttribute('data-lang',l);document.documentElement.lang=l;btn.textContent=l==='en'?'TR':'EN';}
+btn.addEventListener('click',function(){setLang(lang==='en'?'tr':'en');ci=0;del=false;});
+var hdr=document.getElementById('hdr');addEventListener('scroll',function(){hdr.classList.toggle('solid',scrollY>40);},{passive:true});
 
-/* ---------- header ---------- */
-var hdr=document.getElementById('hdr');
-addEventListener('scroll',function(){hdr.classList.toggle('solid',scrollY>40);},{passive:true});
-
-/* ---------- rotating words ---------- */
-var WORDS={en:['geomorphologist','geoarchaeologist','heritage-risk analyst','GIS & remote-sensing specialist'],
-           tr:['jeomorfolog','jeoarkeolog','miras riski analisti','CBS ve uzaktan algılama uzmanı']};
+var WORDS={en:['geological engineer','geoarchaeologist','geomorphologist','heritage-stone specialist','GIS & remote-sensing analyst'],
+           tr:['jeoloji mühendisi','jeoarkeolog','jeomorfolog','miras taşı uzmanı','CBS ve uzaktan algılama analisti']};
 var wi=0,ci=0,del=false,rw=document.getElementById('rotWord');
-function typeLoop(){
-  var w=WORDS[lang][wi%WORDS[lang].length];
-  if(reduce){rw.textContent=w;return;}
-  ci+=del?-1:1; rw.textContent=w.slice(0,ci)||' ';
-  var t=del?40:85;
-  if(!del&&ci>=w.length){del=true;t=1700;} else if(del&&ci<=0){del=false;wi++;t=300;}
-  setTimeout(typeLoop,t);
-}
+function typeLoop(){var w=WORDS[lang][wi%WORDS[lang].length];if(reduce){rw.textContent=w;return;}
+  ci+=del?-1:1;rw.textContent=w.slice(0,Math.max(0,ci))||'\u00a0';var t=del?40:85;
+  if(!del&&ci>=w.length){del=true;t=1700;}else if(del&&ci<=0){del=false;wi++;t=300;}setTimeout(typeLoop,t);}
 
-/* ---------- ticker ---------- */
-function buildTicker(){
-  var N=(window.NEWS||[]).slice().sort(function(a,c){return (c.d||String(c.y||0)).localeCompare(a.d||String(a.y||0));}).slice(0,24);
-  var html=N.map(function(x){var yr=x.y?x.y:'';return '<a href="cop31/news/#n'+(window.NEWS.indexOf(x))+'"><b>'+yr+'</b>'+(lang==='tr'?x.tt:x.te)+'</a>';}).join('');
-  document.getElementById('tickRow').innerHTML=html+html;
-}
-
-/* ---------- reveal & counters ---------- */
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');
-  var c=e.target.querySelector('[data-count]'); if(c&&!c.done){c.done=1;var n=+c.dataset.count,s=performance.now();(function f(t){var k=Math.min(1,(t-s)/1400);c.textContent=Math.round(n*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f);})(s);}
-  io.unobserve(e.target);}});},{threshold:.15});
+  var c=e.target.querySelector('[data-count]');if(c&&!c.done){c.done=1;var n=+c.dataset.count,plus=c.dataset.plus?'+':'',s=performance.now();(function f(t){var k=Math.min(1,(t-s)/1400);c.textContent=Math.round(n*(1-Math.pow(1-k,3)))+(k>=1?plus:'');if(k<1)requestAnimationFrame(f);})(s);}
+  io.unobserve(e.target);}});},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 
-/* ---------- reservoir scene ---------- */
-var cv=document.getElementById('scene'),cx=cv.getContext('2d'),W,H,dpr;
-function size(){dpr=Math.min(2,devicePixelRatio||1);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);}
-size();addEventListener('resize',size);
-var mobile=function(){return W<900;};
-function vx(){return mobile()?0.5:0.73;}           // valley centre (fraction of width)
-function vw(f){return mobile()?0.62:(f<0?0.30:0.24);}           // half-width
-function rimY(){return H*0.50;}
-function bedY(){return H*0.94;}
-function ground(x){var u=x/W-vx();var d=1-Math.pow(u/vw(u),2);if(d<0)d=0;return rimY()+(bedY()-rimY())*Math.pow(d,0.75)+Math.sin(x*0.03)*2;}
-var TOP=function(){return H*0.57;}, LOW=function(){return H*0.86;};
-var SITES=[
-  {f:-0.62,kind:'church',en:'Drowned church',tr:'Batık kilise'},
-  {f:0.62,kind:'columns',en:'Roman columns',tr:'Roma sütunları'},
-  {f:0.81,kind:'mound',en:'Mound (tell)',tr:'Höyük'},
-  {f:0.87,kind:'minaret',en:'Village minaret',tr:'Köy minaresi'}
-];
-var ruinsSeen={};
-function drawMountains(t){
-  var layers=[{y:.30,a:60,c:'#0d3340',s:.0018,o:0},{y:.38,a:45,c:'#0f3f4d',s:.0026,o:2},{y:.45,a:30,c:'#124a58',s:.004,o:4}];
-  layers.forEach(function(L){cx.fillStyle=L.c;cx.beginPath();cx.moveTo(0,H);
-    for(var x=0;x<=W;x+=8){var y=H*L.y-L.a*(Math.sin(x*L.s+L.o)+.5*Math.sin(x*L.s*2.3+L.o*1.7))-0.6*Math.sin(t*.00005+x*.001)*6;cx.lineTo(x,y);}
-    cx.lineTo(W,H);cx.closePath();cx.fill();});
-}
-function groundPath(){cx.beginPath();cx.moveTo(0,H);for(var x=0;x<=W;x+=4)cx.lineTo(x,ground(x));cx.lineTo(W,H);cx.closePath();}
-function drawSite(s,x,y,alpha){
-  cx.save();cx.globalAlpha=alpha;cx.fillStyle='#c9a46a';cx.strokeStyle='#8a6a3a';cx.lineWidth=1.2;
-  if(s.kind==='mound'){cx.beginPath();cx.ellipse(x,y+2,30,16,0,Math.PI,0);cx.fill();cx.fillStyle='#a8834e';for(var i=-1;i<=1;i++){cx.fillRect(x+i*12-4,y-12+Math.abs(i)*4,8,10-Math.abs(i)*3);}}
-  else if(s.kind==='church'){cx.fillRect(x-22,y-26,44,26);cx.beginPath();cx.moveTo(x-25,y-26);cx.lineTo(x,y-42);cx.lineTo(x+25,y-26);cx.fill();cx.fillRect(x+12,y-56,10,30);cx.fillStyle='#5b4526';cx.beginPath();cx.arc(x,y-8,6,Math.PI,0);cx.rect(x-6,y-8,12,8);cx.fill();}
-  else if(s.kind==='columns'){for(var j=0;j<4;j++){var h=[34,26,38,18][j];cx.fillRect(x-24+j*15,y-h,7,h);cx.fillRect(x-26+j*15,y-h-3,11,3);}cx.fillRect(x-28,y-2,60,3);}
-  else if(s.kind==='minaret'){cx.fillRect(x-5,y-66,10,66);cx.fillRect(x-8,y-48,16,4);cx.beginPath();cx.moveTo(x-6,y-66);cx.lineTo(x,y-84);cx.lineTo(x+6,y-66);cx.fill();cx.fillRect(x-30,y-16,22,16);}
-  cx.restore();
-}
-function frame(now){
-  var t=now||0;
-  // water level: slow drawdown & refill cycle (~16 s), with a little seasonal ripple
-  var ph=(Math.sin(t*0.00039 - Math.PI/2)+1)/2;            // 0 = full, 1 = lowest
-  ph=Math.min(1,Math.max(0,ph+0.05*Math.sin(t*0.0013)));
-  var wl=TOP()+(LOW()-TOP())*ph;
-  var falling=Math.cos(t*0.00039 - Math.PI/2)>0;
-  // sky
-  var g=cx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#06202a');g.addColorStop(.55,'#0d3a47');g.addColorStop(1,'#123f4a');
-  cx.fillStyle=g;cx.fillRect(0,0,W,H);
-  // sun glow
-  var sx=W*(mobile()?.8:.84),sy=H*.2;var rg=cx.createRadialGradient(sx,sy,0,sx,sy,H*.35);rg.addColorStop(0,'rgba(240,200,130,.35)');rg.addColorStop(1,'rgba(240,200,130,0)');cx.fillStyle=rg;cx.fillRect(0,0,W,H);
-  cx.fillStyle='rgba(250,220,160,.85)';cx.beginPath();cx.arc(sx,sy,18,0,7);cx.fill();
-  drawMountains(t);
-  // ground with strata
-  groundPath();var gg=cx.createLinearGradient(0,rimY(),0,H);gg.addColorStop(0,'#6b5435');gg.addColorStop(.5,'#4f3c25');gg.addColorStop(1,'#33271a');cx.fillStyle=gg;cx.fill();
-  cx.save();groundPath();cx.clip();
-  // bathtub rings (former shorelines) between top and lowest level
-  for(var k=0;k<9;k++){var yy=TOP()+k*(LOW()-TOP())/8;cx.fillStyle='rgba(230,215,185,'+(0.10+0.05*(k%2))+')';cx.fillRect(0,yy,W,3);}
-  // wet band just above the water line
-  var wb=cx.createLinearGradient(0,wl-30,0,wl);wb.addColorStop(0,'rgba(20,40,40,0)');wb.addColorStop(1,'rgba(20,40,40,.45)');cx.fillStyle=wb;cx.fillRect(0,wl-30,W,30);
-  cx.restore();
-  // heritage sites on the valley floor/slopes
-  var labels=[],nExp=0;
-  SITES.forEach(function(s,i){
-    var x=W*vx()+s.f*W*vw(s.f);var y=ground(x);
-    var exposed=Math.max(0,Math.min(1,(wl-y)/18));          // 0 under water, 1 base dry
-    drawSite(s,x,y,1);
-    if(exposed>0.6)nExp++;
-    if(exposed>0.6&&!mobile()){var hh={mound:22,church:56,columns:40,minaret:84}[s.kind];labels.push({x:x,y:y-hh-26,a:(exposed-0.6)/0.4,s:s});}
-  });
-  // water body: fill below the wavy surface, clipped to the space above the ground surface
-  cx.save();
-  cx.beginPath();cx.moveTo(0,-10);for(var x2=0;x2<=W;x2+=4)cx.lineTo(x2,ground(x2));cx.lineTo(W,-10);cx.closePath();cx.clip();
-  cx.beginPath();cx.moveTo(0,H);
-  for(var x=0;x<=W;x+=6){var wy=wl+Math.sin(x*.025+t*.002)*2.2+Math.sin(x*.06-t*.003)*1.2;cx.lineTo(x,wy);}
-  cx.lineTo(W,H);cx.closePath();
-  var wg=cx.createLinearGradient(0,wl,0,H);wg.addColorStop(0,'rgba(63,182,198,.80)');wg.addColorStop(.35,'rgba(20,110,128,.86)');wg.addColorStop(1,'rgba(8,52,64,.93)');
-  cx.fillStyle=wg;cx.fill();
-  cx.restore();
-  // shimmer on the surface
-  cx.strokeStyle='rgba(255,255,255,.35)';cx.lineWidth=1;
-  for(var i=0;i<14;i++){var px=((i*137+t*.03)%W);var lx=W*vx()-W*vw(-1)*0.9,rx=W*vx()+W*vw(1)*0.9;if(px<lx||px>rx)continue;var py=wl+6+(i%5)*9;if(ground(px)<py)continue;cx.beginPath();cx.moveTo(px,py);cx.lineTo(px+18+(i%3)*8,py);cx.stroke();}
-  // labels
-  labels.forEach(function(L){var txt=lang==='tr'?L.s.tr:L.s.en;cx.save();cx.globalAlpha=L.a;cx.font='600 12px "Source Sans 3",system-ui,sans-serif';var w=cx.measureText(txt).width+18;
-    cx.fillStyle='rgba(215,166,95,.95)';cx.beginPath();if(cx.roundRect)cx.roundRect(L.x-w/2,L.y-12,w,22,11);else cx.rect(L.x-w/2,L.y-12,w,22);cx.fill();
-    cx.fillStyle='#1d1407';cx.textAlign='center';cx.fillText(txt,L.x,L.y+3);cx.strokeStyle='rgba(215,166,95,.8)';cx.beginPath();cx.moveTo(L.x,L.y+10);cx.lineTo(L.x,L.y+22);cx.stroke();cx.restore();});
-  // gauge
-  var pct=Math.round(100-ph*85);
-  document.getElementById('gVal').textContent=pct+'%';
-  document.getElementById('gBar').style.width=pct+'%';
-  var st=document.getElementById('gState');
-  if(nExp){st.textContent=lang==='tr'?('Açığa çıkan miras: '+nExp):('Heritage exposed: '+nExp);st.className='state warn';}
-  else{st.textContent=falling?(lang==='tr'?'Su çekiliyor…':'Drawdown in progress…'):(lang==='tr'?'Baraj doluyor…':'Refilling…');st.className='state';}
-  if(!reduce)requestAnimationFrame(frame);
-}
-
-/* ---------- start ---------- */
 var qp=new URLSearchParams(location.search).get('lang');
 setLang(qp==='tr'||qp==='en'?qp:((navigator.language||'').toLowerCase().indexOf('tr')===0?'tr':'en'));
 typeLoop();
-if(reduce){frame(4000);}else{requestAnimationFrame(frame);}
 })();
 </script>
 </body>

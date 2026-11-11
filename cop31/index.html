@@ -12,10 +12,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/site.css">
 </head>
 <body data-lang="en">
-<header class="site"><div class="wrap">
-  <a class="brand" href="../">Selman Er</a>
+<header class="site" id="hdr"><div class="wrap">
+  <a class="brand" href="../">← Selman Er</a>
   <nav>
     <a href="#problem"><span class="en">Problem</span><span class="tr">Sorun</span></a>
     <a href="#pilots"><span class="en">Pilots</span><span class="tr">Pilotlar</span></a>
@@ -26,26 +27,41 @@
   </nav>
 </div></header>
 
-<div class="hero"><div class="wrap">
-  <p class="kicker"><span class="en">COP31 Green Zone · Antalya · 13 November 2026 · Stand 9</span><span class="tr">COP31 Yeşil Bölge · Antalya · 13 Kasım 2026 · Stand 9</span></p>
-  <h1>
-    <span class="en">Monitoring drawdown-zone heritage in Türkiye under a changing climate</span>
-    <span class="tr">Değişen iklimde Türkiye'nin göl ve baraj salınım kuşağındaki mirasın izlenmesi</span>
-  </h1>
-  <p class="sub">
-    <span class="en">Geoarchaeological impacts of lake and reservoir level changes on cultural heritage, and a climate-resilient conservation model.</span>
-    <span class="tr">Göl ve baraj seviyesi değişimlerinin kıyı/sualtı kültürel mirası üzerindeki jeoarkeolojik etkileri ve iklime dirençli bir koruma modeli.</span>
-  </p>
-  <p class="meta"><span class="en">Assoc. Prof. Dr. Selman Er · Department of Geography, İnönü University, Malatya</span><span class="tr">Doç. Dr. Selman Er · İnönü Üniversitesi Coğrafya Bölümü, Malatya</span></p>
-  <div class="chips">
-    <span class="chip">Karakaya</span><span class="chip">Keban</span><span class="chip"><span class="en">Lake İznik</span><span class="tr">İznik Gölü</span></span><span class="chip"><span class="en">Lakes District</span><span class="tr">Göller Bölgesi</span></span>
+<section class="hero2" id="top">
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="intro" style="max-width:600px">
+      <p class="eyebrow"><span class="en">COP31 Green Zone · Antalya · 13 November 2026 · Stand 9</span><span class="tr">COP31 Yeşil Bölge · Antalya · 13 Kasım 2026 · Stand 9</span></p>
+      <h1 style="font-size:clamp(2rem,4.6vw,3.3rem)"><span class="en">When the water falls, heritage surfaces</span><span class="tr">Su çekildiğinde miras yüzeye çıkar</span></h1>
+      <p class="lede"><span class="en">Monitoring drawdown-zone heritage in Türkiye under a changing climate — geoarchaeological impacts of lake and reservoir level change and a climate-resilient conservation model.</span><span class="tr">Değişen iklimde Türkiye'nin göl ve baraj salınım kuşağındaki mirasın izlenmesi — seviye değişimlerinin jeoarkeolojik etkileri ve iklime dirençli bir koruma modeli.</span></p>
+      <div class="chips" style="margin:-6px 0 22px"><span class="chip">Karakaya</span><span class="chip">Keban</span><span class="chip"><span class="en">Lake İznik</span><span class="tr">İznik Gölü</span></span><span class="chip"><span class="en">Lakes District</span><span class="tr">Göller Bölgesi</span></span></div>
+      <div class="cta">
+        <a class="btn2 primary" href="#problem"><span class="en">Explore the project</span><span class="tr">Projeyi keşfet</span> ↓</a>
+        <a class="btn2 ghost" href="news/"><span class="en">News atlas (67 reports)</span><span class="tr">Haber atlası (67 haber)</span></a>
+      </div>
+      <p style="margin-top:22px;color:#cfe9ee;font-size:.95rem"><span class="en">Assoc. Prof. Dr. Selman Er · İnönü University</span><span class="tr">Doç. Dr. Selman Er · İnönü Üniversitesi</span></p>
+    </div>
   </div>
+  <div class="gauge" aria-live="off">
+    <div class="lbl"><span class="en">Simulated reservoir level</span><span class="tr">Temsili baraj doluluğu</span></div>
+    <div class="val" id="gVal">—</div>
+    <div class="bar"><i id="gBar"></i></div>
+    <div class="state" id="gState">—</div>
+  </div>
+  <div class="scrollhint">▾ <span class="en">scroll</span><span class="tr">kaydır</span></div>
+</section>
+<div class="ticker" aria-label="Latest reports"><div class="row" id="tickRow"></div></div>
+<div class="wrap"><div class="stats2">
+  <div class="stat2 rv"><b data-count="67">0</b><span class="en">news reports in the atlas</span><span class="tr">haber, atlasta</span></div>
+  <div class="stat2 rv"><b data-count="14">0</b><span class="en">countries</span><span class="tr">ülke</span></div>
+  <div class="stat2 rv"><b data-count="4">0</b><span class="en">pilot landscapes</span><span class="tr">pilot alan</span></div>
+  <div class="stat2 rv"><b data-count="7">0</b><span class="en">drawdown-zone processes</span><span class="tr">salınım kuşağı süreci</span></div>
 </div></div>
 
 <main class="wrap">
 
 <section id="problem">
-  <h2><span class="en">The drawdown zone: a new climate frontline</span><span class="tr">Salınım kuşağı: iklimin yeni cephesi</span></h2>
+  <h2 class="rv"><span class="en">The drawdown zone: a new climate frontline</span><span class="tr">Salınım kuşağı: iklimin yeni cephesi</span></h2>
   <p class="lead">
     <span class="en">Reservoirs and lakes no longer fluctuate within their design envelopes. Drought, higher evaporative demand and extreme precipitation widen both the amplitude and the frequency of water-level change. The band that is alternately submerged and exposed — <i>h</i><sub>min</sub> ≤ <i>z</i> ≤ <i>h</i><sub>max</sub> — has become the most aggressive weathering and taphonomic environment for drowned and shoreline heritage.</span>
     <span class="tr">Barajlar ve göller artık tasarım zarfları içinde salınmıyor. Kuraklık, artan buharlaşma talebi ve ekstrem yağışlar seviye değişiminin hem genliğini hem sıklığını büyütüyor. Dönüşümlü olarak su altında kalan ve açığa çıkan kuşak — <i>h</i><sub>min</sub> ≤ <i>z</i> ≤ <i>h</i><sub>max</sub> — batık ve kıyı mirası için en agresif ayrışma ve tafonomik ortama dönüştü.</span>
@@ -55,49 +71,49 @@
     <span class="tr">Savımız: mirası gözeten su seviyesi yönetimi bir iklim uyum önlemidir.</span>
   </p>
   <div class="grid g3">
-    <div class="card"><p class="tag"><span class="en">Observed in Türkiye</span><span class="tr">Türkiye'de gözlenen</span>, 2021–2025</p>
+    <div class="card rv"><p class="tag"><span class="en">Observed in Türkiye</span><span class="tr">Türkiye'de gözlenen</span>, 2021–2025</p>
       <p><span class="en">Keban: Pulur Sakyol and Yeniköy mounds re-emerged; a drowned railway station surfaced as the shore retreated c. 550 m (2023).</span><span class="tr">Keban: Pulur Sakyol ve Yeniköy höyükleri yeniden ortaya çıktı; kıyı yaklaşık 550 m çekilince batık bir tren istasyonu göründü (2023).</span></p></div>
-    <div class="card"><p class="tag"><span class="en">Re-exposure and looting</span><span class="tr">Yeniden açığa çıkma ve yağma</span></p>
+    <div class="card rv"><p class="tag"><span class="en">Re-exposure and looting</span><span class="tr">Yeniden açığa çıkma ve yağma</span></p>
       <p><span class="en">Skepsis (Bayramiç), Augusta (Seyhan) and Altınapa Han (Konya) resurfaced — some immediately targeted by looters.</span><span class="tr">Skepsis (Bayramiç), Augusta (Seyhan) ve Altınapa Hanı (Konya) yeniden göründü; bazıları hemen kaçak kazı hedefi oldu.</span></p></div>
-    <div class="card"><p class="tag"><span class="en">Three COP agendas</span><span class="tr">Üç COP gündemi</span></p>
+    <div class="card rv"><p class="tag"><span class="en">Three COP agendas</span><span class="tr">Üç COP gündemi</span></p>
       <p><span class="en">Fluctuation-zone heritage sits at the intersection of water security, adaptation, and loss &amp; damage to cultural heritage.</span><span class="tr">Salınım kuşağı mirası; su güvenliği, uyum ve kültürel mirasta kayıp &amp; zarar gündemlerinin kesişiminde yer alır.</span></p></div>
   </div>
 </section>
 
 <section id="processes">
-  <h2><span class="en">Seven geoarchaeological processes</span><span class="tr">Yedi jeoarkeolojik süreç</span></h2>
+  <h2 class="rv"><span class="en">Seven geoarchaeological processes</span><span class="tr">Yedi jeoarkeolojik süreç</span></h2>
   <div class="grid g3">
-    <div class="card"><span class="num">1</span><h3><span class="en">Wave abrasion &amp; notching</span><span class="tr">Dalga aşındırması ve çentiklenme</span></h3></div>
-    <div class="card"><span class="num">2</span><h3><span class="en">Wetting–drying cycles</span><span class="tr">Islanma–kuruma döngüleri</span></h3></div>
-    <div class="card"><span class="num">3</span><h3><span class="en">Slaking of mud-brick</span><span class="tr">Kerpicin dağılması (slaking)</span></h3></div>
-    <div class="card"><span class="num">4</span><h3><span class="en">Salt crystallisation</span><span class="tr">Tuz kristalleşmesi</span></h3></div>
-    <div class="card"><span class="num">5</span><h3><span class="en">Bank failure &amp; gullying</span><span class="tr">Şev yenilmesi ve oyuntu</span></h3></div>
-    <div class="card"><span class="num">6</span><h3><span class="en">Burial and stripping of stratigraphy</span><span class="tr">Stratigrafinin gömülmesi/sıyrılması</span></h3></div>
-    <div class="card"><span class="num">7</span><h3><span class="en">Human pressure on exposed shores</span><span class="tr">Açığa çıkan kıyıda insan baskısı</span></h3><p class="small"><span class="en">Cultivation, trampling, looting.</span><span class="tr">Tarım, çiğneme, kaçak kazı.</span></p></div>
+    <div class="card rv"><span class="num">1</span><h3><span class="en">Wave abrasion &amp; notching</span><span class="tr">Dalga aşındırması ve çentiklenme</span></h3></div>
+    <div class="card rv"><span class="num">2</span><h3><span class="en">Wetting–drying cycles</span><span class="tr">Islanma–kuruma döngüleri</span></h3></div>
+    <div class="card rv"><span class="num">3</span><h3><span class="en">Slaking of mud-brick</span><span class="tr">Kerpicin dağılması (slaking)</span></h3></div>
+    <div class="card rv"><span class="num">4</span><h3><span class="en">Salt crystallisation</span><span class="tr">Tuz kristalleşmesi</span></h3></div>
+    <div class="card rv"><span class="num">5</span><h3><span class="en">Bank failure &amp; gullying</span><span class="tr">Şev yenilmesi ve oyuntu</span></h3></div>
+    <div class="card rv"><span class="num">6</span><h3><span class="en">Burial and stripping of stratigraphy</span><span class="tr">Stratigrafinin gömülmesi/sıyrılması</span></h3></div>
+    <div class="card rv"><span class="num">7</span><h3><span class="en">Human pressure on exposed shores</span><span class="tr">Açığa çıkan kıyıda insan baskısı</span></h3><p class="small"><span class="en">Cultivation, trampling, looting.</span><span class="tr">Tarım, çiğneme, kaçak kazı.</span></p></div>
   </div>
 </section>
 
 <section id="pilots">
-  <h2><span class="en">Four pilot landscapes</span><span class="tr">Dört pilot alan</span></h2>
+  <h2 class="rv"><span class="en">Four pilot landscapes</span><span class="tr">Dört pilot alan</span></h2>
   <p class="small"><span class="en">Selection spans artificial (reservoir) and natural (lake) regimes, east–west climate gradients and contrasting heritage types.</span><span class="tr">Seçim; yapay (baraj) ve doğal (göl) rejimleri, doğu–batı iklim gradyanını ve farklı miras türlerini kapsar.</span></p>
   <div class="grid g2">
-    <div class="card"><span class="num">1</span><h3><span class="en">Karakaya Reservoir</span><span class="tr">Karakaya Barajı</span> · Malatya–Elazığ</h3>
+    <div class="card rv"><span class="num">1</span><h3><span class="en">Karakaya Reservoir</span><span class="tr">Karakaya Barajı</span> · Malatya–Elazığ</h3>
       <p><span class="en">Upper Euphrates reservoir within the East Anatolian Fault Zone; Lower Euphrates salvage sites (Değirmentepe, Cafer Höyük, İmamoğlu, İmikuşağı) now beneath the lake. Exposed shores are being cultivated.</span><span class="tr">Doğu Anadolu Fay Zonu içinde Yukarı Fırat barajı; Aşağı Fırat kurtarma kazısı alanları (Değirmentepe, Cafer Höyük, İmamoğlu, İmikuşağı) göl altında. Açığa çıkan kıyılar tarıma açılıyor.</span></p></div>
-    <div class="card"><span class="num">2</span><h3><span class="en">Keban Reservoir</span><span class="tr">Keban Barajı</span> · Elazığ–Tunceli</h3>
+    <div class="card rv"><span class="num">2</span><h3><span class="en">Keban Reservoir</span><span class="tr">Keban Barajı</span> · Elazığ–Tunceli</h3>
       <p><span class="en">Site of Türkiye's first large rescue programme (METU, from 1968): Norşuntepe, Korucutepe, Tepecik, Pulur (Sakyol). Mounds now re-emerging in drought low stands.</span><span class="tr">Türkiye'nin ilk büyük kurtarma programının alanı (ODTÜ, 1968'den itibaren): Norşuntepe, Korucutepe, Tepecik, Pulur (Sakyol). Höyükler kurak dönem düşük seviyelerinde yeniden ortaya çıkıyor.</span></p></div>
-    <div class="card"><span class="num">3</span><h3><span class="en">Lake İznik</span><span class="tr">İznik Gölü</span> · Bursa</h3>
+    <div class="card rv"><span class="num">3</span><h3><span class="en">Lake İznik</span><span class="tr">İznik Gölü</span> · Bursa</h3>
       <p><span class="en">Natural tectonic lake; the Early Christian basilica identified in 2014 at c. 1.5–2 m depth now stands largely above water as the shore retreats.</span><span class="tr">Doğal tektonik göl; 2014'te yaklaşık 1,5–2 m derinlikte tespit edilen Erken Hristiyan bazilikası, kıyı çekildikçe büyük ölçüde su üstünde kaldı.</span></p></div>
-    <div class="card"><span class="num">4</span><h3><span class="en">Lakes District</span><span class="tr">Göller Bölgesi</span> · Isparta–Antalya</h3>
+    <div class="card rv"><span class="num">4</span><h3><span class="en">Lakes District</span><span class="tr">Göller Bölgesi</span> · Isparta–Antalya</h3>
       <p><span class="en">Karstic Eğirdir Lake and the Karacaören reservoirs in COP31's host region; Eğirdir split in two at the Hoyran strait in October 2025.</span><span class="tr">COP31 ev sahibi bölgede karstik Eğirdir Gölü ve Karacaören barajları; Eğirdir Ekim 2025'te Hoyran boğazında ikiye bölündü.</span></p></div>
   </div>
 </section>
 
 <section id="toolkit">
-  <h2><span class="en">Monitoring and quantifying risk</span><span class="tr">İzleme ve riskin nicelleştirilmesi</span></h2>
+  <h2 class="rv"><span class="en">Monitoring and quantifying risk</span><span class="tr">İzleme ve riskin nicelleştirilmesi</span></h2>
   <div class="grid g3">
-    <div class="card"><p class="tag"><span class="en">Space</span><span class="tr">Uzay</span></p><p><span class="en">Landsat/Sentinel-2 MNDWI shoreline series; JRC Global Surface Water.</span><span class="tr">Landsat/Sentinel-2 MNDWI kıyı çizgisi serileri; JRC Global Surface Water.</span></p></div>
-    <div class="card"><p class="tag"><span class="en">Air</span><span class="tr">Hava</span></p><p><span class="en">UAV-SfM and LiDAR in low-stand windows → multi-temporal DEMs of difference.</span><span class="tr">Düşük seviye pencerelerinde İHA-SfM ve LiDAR → çok zamanlı DEM farkları.</span></p></div>
-    <div class="card"><p class="tag"><span class="en">Water &amp; ground</span><span class="tr">Su ve zemin</span></p><p><span class="en">Bathymetry, side-scan sonar, GNSS/RTK, level gauges, material sampling.</span><span class="tr">Batimetri, yan taramalı sonar, GNSS/RTK, seviye ölçerler, malzeme örneklemesi.</span></p></div>
+    <div class="card rv"><p class="tag"><span class="en">Space</span><span class="tr">Uzay</span></p><p><span class="en">Landsat/Sentinel-2 MNDWI shoreline series; JRC Global Surface Water.</span><span class="tr">Landsat/Sentinel-2 MNDWI kıyı çizgisi serileri; JRC Global Surface Water.</span></p></div>
+    <div class="card rv"><p class="tag"><span class="en">Air</span><span class="tr">Hava</span></p><p><span class="en">UAV-SfM and LiDAR in low-stand windows → multi-temporal DEMs of difference.</span><span class="tr">Düşük seviye pencerelerinde İHA-SfM ve LiDAR → çok zamanlı DEM farkları.</span></p></div>
+    <div class="card rv"><p class="tag"><span class="en">Water &amp; ground</span><span class="tr">Su ve zemin</span></p><p><span class="en">Bathymetry, side-scan sonar, GNSS/RTK, level gauges, material sampling.</span><span class="tr">Batimetri, yan taramalı sonar, GNSS/RTK, seviye ölçerler, malzeme örneklemesi.</span></p></div>
   </div>
   <p style="margin-top:20px"><span class="en">Site-level risk combines hazard, exposure and vulnerability; exposure is the Drawdown Exposure Ratio — the fraction of days a site at elevation <i>z<sub>i</sub></i> lies inside the wet–dry band:</span><span class="tr">Alan ölçeğinde risk; tehlike, maruziyet ve hassasiyeti birleştirir. Maruziyet, Salınım Maruziyet Oranı'dır — <i>z<sub>i</sub></i> kotundaki bir alanın ıslak–kuru bant içinde kaldığı günlerin oranı:</span></p>
   <div class="eq"><i>R<sub>i</sub></i> = <i>H<sub>i</sub></i> · <i>E<sub>i</sub></i> · <i>V<sub>i</sub></i>, &nbsp;&nbsp; <i>E<sub>i</sub></i> = (1/<i>N</i>) Σ<sub><i>t</i></sub> 𝟙[ |<i>h</i>(<i>t</i>) − <i>z<sub>i</sub></i>| ≤ Δ<i>z</i> ]</div>
@@ -105,7 +121,7 @@
 </section>
 
 <section id="model">
-  <h2><span class="en">A climate-resilient conservation model</span><span class="tr">İklime dirençli koruma modeli</span></h2>
+  <h2 class="rv"><span class="en">A climate-resilient conservation model</span><span class="tr">İklime dirençli koruma modeli</span></h2>
   <ol class="steps">
     <li><b>1 · <span class="en">Anticipate</span><span class="tr">Öngör</span></b><span class="en">Level forecasts and SPEI thresholds trigger alerts before exposure.</span><span class="tr">Seviye tahminleri ve SPEI eşikleri açığa çıkmadan önce uyarı üretir.</span></li>
     <li><b>2 · <span class="en">Document</span><span class="tr">Belgele</span></b><span class="en">Digital twin of every exposed site in each low-stand window.</span><span class="tr">Her düşük seviye penceresinde açığa çıkan alanın dijital ikizi.</span></li>
@@ -118,24 +134,24 @@
 </section>
 
 <section id="messages">
-  <h2><span class="en">Messages for COP31</span><span class="tr">COP31 için mesajlar</span></h2>
+  <h2 class="rv"><span class="en">Messages for COP31</span><span class="tr">COP31 için mesajlar</span></h2>
   <div class="grid g3">
-    <div class="card"><h3><span class="en">Recognise</span><span class="tr">Tanı</span></h3><p><span class="en">Treat reservoir and lake heritage as climate-exposed heritage in national adaptation planning.</span><span class="tr">Baraj ve göl mirasını ulusal uyum planlamasında iklime maruz miras olarak ele al.</span></p></div>
-    <div class="card"><h3><span class="en">Plan the window</span><span class="tr">Pencereyi planla</span></h3><p><span class="en">Use every drought low stand as a planned documentation window, not an emergency.</span><span class="tr">Her kurak dönem düşük seviyesini acil durum değil, planlı bir belgeleme penceresi olarak kullan.</span></p></div>
-    <div class="card"><h3><span class="en">Integrate</span><span class="tr">Bütünleştir</span></h3><p><span class="en">Build heritage thresholds into water-level management and share data openly.</span><span class="tr">Miras eşiklerini su seviyesi yönetimine dahil et, veriyi açık paylaş.</span></p></div>
+    <div class="card rv"><h3><span class="en">Recognise</span><span class="tr">Tanı</span></h3><p><span class="en">Treat reservoir and lake heritage as climate-exposed heritage in national adaptation planning.</span><span class="tr">Baraj ve göl mirasını ulusal uyum planlamasında iklime maruz miras olarak ele al.</span></p></div>
+    <div class="card rv"><h3><span class="en">Plan the window</span><span class="tr">Pencereyi planla</span></h3><p><span class="en">Use every drought low stand as a planned documentation window, not an emergency.</span><span class="tr">Her kurak dönem düşük seviyesini acil durum değil, planlı bir belgeleme penceresi olarak kullan.</span></p></div>
+    <div class="card rv"><h3><span class="en">Integrate</span><span class="tr">Bütünleştir</span></h3><p><span class="en">Build heritage thresholds into water-level management and share data openly.</span><span class="tr">Miras eşiklerini su seviyesi yönetimine dahil et, veriyi açık paylaş.</span></p></div>
   </div>
   <h3 style="margin-top:24px"><span class="en">Proposed roadmap</span><span class="tr">Önerilen yol haritası</span></h3>
   <p><b><span class="en">Phase 1</span><span class="tr">Evre 1</span></b> · <span class="en">Inventory &amp; baseline</span><span class="tr">Envanter ve temel durum</span> → <b><span class="en">Phase 2</span><span class="tr">Evre 2</span></b> · <span class="en">Field monitoring</span><span class="tr">Arazi izlemesi</span> → <b><span class="en">Phase 3</span><span class="tr">Evre 3</span></b> · <span class="en">Protocol &amp; policy brief</span><span class="tr">Protokol ve politika notu</span></p>
 </section>
 
 <section id="news">
-  <h2><span class="en">In the news: 67 reports, 14 countries</span><span class="tr">Basında: 14 ülkeden 67 haber</span></h2>
+  <h2 class="rv"><span class="en">In the news: 67 reports, 14 countries</span><span class="tr">Basında: 14 ülkeden 67 haber</span></h2>
   <p class="lead"><span class="en">From Keban, Seyhan and Lake İznik to Mosul, Sau and Lake Mead, the same pattern recurs: a drought low stand opens a brief, unplanned window — followed by emergency documentation, looting and trampling, and re-submergence.</span><span class="tr">Keban, Seyhan ve İznik Gölü'nden Musul, Sau ve Lake Mead'e aynı örüntü tekrarlanıyor: kuraklıkla düşen seviye kısa ve plansız bir pencere açıyor; ardından acil belgeleme, yağma ve çiğneme, yeniden su altında kalma geliyor.</span></p>
   <a class="btn" href="news/"><span class="en">Open the news atlas (map + reports)</span><span class="tr">Haber atlasını aç (harita + haberler)</span></a>
 </section>
 
 <section id="materials">
-  <h2><span class="en">Poster and slides</span><span class="tr">Poster ve sunum</span></h2>
+  <h2 class="rv"><span class="en">Poster and slides</span><span class="tr">Poster ve sunum</span></h2>
   <!-- After Zenodo upload: replace the two disabled buttons with real links (DOI) -->
   <a class="btn disabled" href="#" aria-disabled="true"><span class="en">Digital poster (PDF)</span><span class="tr">Dijital poster (PDF)</span></a>
   <a class="btn disabled" href="#" aria-disabled="true"><span class="en">Presentation (PDF)</span><span class="tr">Sunum (PDF)</span></a>
@@ -152,7 +168,7 @@
 </section>
 
 <section id="contact">
-  <h2><span class="en">Contact and collaboration</span><span class="tr">İletişim ve iş birliği</span></h2>
+  <h2 class="rv"><span class="en">Contact and collaboration</span><span class="tr">İletişim ve iş birliği</span></h2>
   <p><span class="en">We welcome partners from water agencies, museums, heritage authorities and universities — especially for low-stand documentation windows and data sharing.</span><span class="tr">Su idareleri, müzeler, miras kurumları ve üniversitelerden ortaklara açığız — özellikle düşük seviye belgeleme pencereleri ve veri paylaşımı için.</span></p>
   <a class="btn" href="mailto:selman.er@inonu.edu.tr?subject=COP31%20drawdown-zone%20heritage">selman.er@inonu.edu.tr</a>
   <a class="btn ghost" href="../"><span class="en">All work by Selman Er</span><span class="tr">Selman Er'in tüm çalışmaları</span></a>
@@ -174,6 +190,22 @@
   var nav=(navigator.language||'').toLowerCase().indexOf('tr')===0?'tr':'en';
   set(q==='tr'||q==='en'?q:nav);
   btn.addEventListener('click',function(){set(b.getAttribute('data-lang')==='en'?'tr':'en');});
+})();
+</script>
+<script src="news/news-data.js"></script>
+<script src="../assets/reservoir.js"></script>
+<script>
+(function(){
+  var hdr=document.getElementById('hdr');addEventListener('scroll',function(){hdr.classList.toggle('solid',scrollY>40);},{passive:true});
+  function buildTicker(){var lang=document.body.getAttribute('data-lang');
+    var N=(window.NEWS||[]).map(function(x,i){x._i=i;return x;}).slice().sort(function(a,c){return (c.d||String(c.y||0)).localeCompare(a.d||String(a.y||0));}).slice(0,24);
+    var h=N.map(function(x){return '<a href="news/#n'+x._i+'"><b>'+(x.y||'')+'</b>'+(lang==='tr'?x.tt:x.te)+'</a>';}).join('');
+    document.getElementById('tickRow').innerHTML=h+h;}
+  buildTicker();document.getElementById('langBtn').addEventListener('click',function(){setTimeout(buildTicker,0);});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');
+    var c=e.target.querySelector('[data-count]');if(c&&!c.done){c.done=1;var n=+c.dataset.count,s=performance.now();(function f(t){var k=Math.min(1,(t-s)/1400);c.textContent=Math.round(n*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f);})(s);}
+    io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 })();
 </script>
 </body>
